@@ -105,26 +105,54 @@
         animation: fadeInUp 1s ease-out;
     }
 </style>
+
+
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+</script>
     
 </head>
 <body class="overflow-x-hidden">
     <div>
-        <nav class="bg-white  py-4 px-8 flex items-end shadow-xl  top-0">
-            <div class="flex mr-[100px]">
-              <img src="assets/image 1 (2).png" alt="School Logo" class="h-12">
+        <header class="bg-white  py-4 px-8 flex items-end shadow-xl  top-0">
+            <nav class="flex justify-between items-center">
+                <div class="flex mr-[100px]">
+                    <img src="assets/image 1 (2).png" alt="School Logo" class="h-12">
+                  </div>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="nav-item">Home</a></li>
+                    <li><a href="About.html" class="nav-item">About Us</a></li>
+                    <li><a href="Academics.html" class="nav-item">Academics</a></li>
+                    <li><a href="#" class="nav-item">Campuses</a></li>
+                    <li><a href="#" class="nav-item">Events / Gallery</a></li>
+                    <li><a href="#" class="nav-item">Results</a></li>
+                    <li><a href="#" class="nav-item">Careers</a></li>
+                    <li><a href="#" class="nav-item">Admissions</a></li>
+                    <li><a href="#" class="nav-item">Contact Us</a></li>
+                </ul>
+                <button class="md:hidden block text-gray-800 focus:outline-none" id="menu-toggle">
+                    ☰
+                </button>
+            </nav>
+    
+            <!-- Mobile Menu -->
+            <div class="hidden md:hidden bg-white w-full absolute left-0 top-16 shadow-md" id="mobile-menu">
+                <ul class="flex flex-col text-center space-y-4 py-4">
+                    <li><a href="index.html" class="nav-item">Home</a></li>
+                    <li><a href="About.html" class="nav-item">About Us</a></li>
+                    <li><a href="Academics.html" class="nav-item">Academics</a></li>
+                    <li><a href="#" class="nav-item">Campuses</a></li>
+                    <li><a href="#" class="nav-item">Events / Gallery</a></li>
+                    <li><a href="#" class="nav-item">Results</a></li>
+                    <li><a href="#" class="nav-item">Careers</a></li>
+                    <li><a href="#" class="nav-item">Admissions</a></li>
+                    <li><a href="#" class="nav-item">Contact Us</a></li>
+                </ul>
             </div>
-            <ul class="flex space-x-10">
-                <li><a href="index.html" class="nav-item">Home</a></li>
-                <li><a href="About.html" class="nav-item">About Us</a></li>
-                <li><a href="#" class="nav-item">Academics</a></li>
-                <li><a href="#" class="nav-item">Campuses</a></li>
-                <li><a href="#" class="nav-item">Events / Gallery</a></li>
-                <li><a href="#" class="nav-item">Results</a></li>
-                <li><a href="#" class="nav-item">Careers</a></li>
-                <li><a href="#" class="nav-item">Admissions</a></li>
-                <li><a href="#" class="nav-item">Contact Us</a></li>
-            </ul>
-          </nav>
+        </header>
+    
           <div>
             <img src="assets/aboutBanner.png" alt="banner" class="w-screen object-cover"/>
 
@@ -135,7 +163,7 @@
             <p class="text-white text-md width-70% font-[inter] mt-[50px] whitespace-wrap text-center ">Adarsh English Medium School is proud to be recognized as the best English medium educational institution in Tenali, serving the community with excellence for over 35 years. Our student-centric approach, combined with a strong focus on the overall development of each child, sets us apart as a trusted choice for families seeking quality education at an affordable cost. 
                
                 </p>
-                <p class="mt-[50px] text-white font-[inter] text-center line-clamp-1 whitespace-normal">   We believe in nurturing young minds with care, knowledge, and values, making Adarsh a leading destination for parents who want the best for their children’s academic and personal growth.</p>
+                <p class="mt-[50px] text-white font-[inter] text-center line-clamp-1 whitespace-normal"> We believe in nurturing young minds with care, knowledge, and values, making Adarsh a leading destination for parents who want the best for their children’s academic and personal growth.</p>
                     <div class=" flex bg-[#225BC6] w-[1235px] h-[300px] mt-[50px] rounded-[17px] justify-between items-center p-[50px] hover:scale-105 transition-transform duration-300">
             
                     <div  class="text-center mr-[50px]">
@@ -265,7 +293,11 @@
             </p>
         </div>
         <div class="bg-[#229F6A] w-screen h-screen flex flex-col items-center  p-8">
-            <img src="assets/Mask group (1).png" alt="map" class="rounded-lg mt-[10px]" />
+            <iframe width="1200" height="350"  src="https://www.openstreetmap.org/export/embed.html?bbox=80.63198804855348%2C16.24370624695233%2C80.63438057899477%2C16.245297675058342&amp;layer=mapnik&amp;marker=16.24450196261525%2C80.63318431377411" style="border: 1px solid black "></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=16.244502&amp;mlon=80.633184#map=19/16.244502/80.633184"><button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md 
+                transition-transform duration-300 hover:scale-110 
+                hover:shadow-blue-500/50">
+  Larger View
+</button></a></small>
             <div><footer class="bg-[#229F6A] text-white py-8">
               <div class="max-w-6xl mx-auto px-6 grid grid-cols-5 gap-8">
                   <!-- Company Info -->
