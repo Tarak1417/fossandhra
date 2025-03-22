@@ -30,7 +30,12 @@
             transform: scale(1.1); /* Scale up by 10% */
             color: #ef4444; /* Red-500 */
         }
+        #mobile-menu {
+           z-index: 50;
+        }
+
     </style>
+
      <style>
         /* Fade-in effect */
         @keyframes fadeIn {
@@ -106,44 +111,38 @@
     }
 </style>
 
-
-<script>
-    document.getElementById("menu-toggle").addEventListener("click", function () {
-        document.getElementById("mobile-menu").classList.toggle("hidden");
-    });
-</script>
     
 </head>
 <body class="overflow-x-hidden">
     <div>
-        <header class="bg-white  py-4 px-8 flex items-end shadow-xl  top-0">
-            <nav class="flex justify-between items-center">
+        <header class="bg-white py-4 px-10 flex items-end shadow-xl top-0 relative ">
+            <nav class="flex justify-between items-center w-full">
                 <div class="flex mr-[100px]">
                     <img src="assets/image 1 (2).png" alt="School Logo" class="h-12">
-                  </div>
-                <ul class="hidden md:flex space-x-8">
+                </div>
+                <ul class="hidden md:flex space-x-8 ml-[10px] mt-[10px]">
                     <li><a href="index.html" class="nav-item">Home</a></li>
                     <li><a href="About.html" class="nav-item">About Us</a></li>
                     <li><a href="Academics.html" class="nav-item">Academics</a></li>
-                    <li><a href="#" class="nav-item">Campuses</a></li>
+                    <li><a href="Campus.html" class="nav-item">Campuses</a></li>
                     <li><a href="#" class="nav-item">Events / Gallery</a></li>
                     <li><a href="#" class="nav-item">Results</a></li>
                     <li><a href="#" class="nav-item">Careers</a></li>
                     <li><a href="#" class="nav-item">Admissions</a></li>
                     <li><a href="#" class="nav-item">Contact Us</a></li>
                 </ul>
-                <button class="md:hidden block text-gray-800 focus:outline-none" id="menu-toggle">
+                <button class="md:hidden block text-gray-800 focus:outline-none text-2xl" id="menu-toggle">
                     ☰
                 </button>
             </nav>
-    
+        
             <!-- Mobile Menu -->
-            <div class="hidden md:hidden bg-white w-full absolute left-0 top-16 shadow-md" id="mobile-menu">
+            <div class="hidden md:hidden bg-white w-full absolute left-0 top-full shadow-md  z-50" id="mobile-menu">
                 <ul class="flex flex-col text-center space-y-4 py-4">
                     <li><a href="index.html" class="nav-item">Home</a></li>
                     <li><a href="About.html" class="nav-item">About Us</a></li>
                     <li><a href="Academics.html" class="nav-item">Academics</a></li>
-                    <li><a href="#" class="nav-item">Campuses</a></li>
+                    <li><a href="Campus.html" class="nav-item">Campuses</a></li>
                     <li><a href="#" class="nav-item">Events / Gallery</a></li>
                     <li><a href="#" class="nav-item">Results</a></li>
                     <li><a href="#" class="nav-item">Careers</a></li>
@@ -157,56 +156,84 @@
             <img src="assets/aboutBanner.png" alt="banner" class="w-screen object-cover"/>
 
           </div>
-          <div class="bg-[#F59738] w-screen flex flex-col justify-center items-center p-[100px]">
-            <h1 class="text-4xl font-bold text-white font-[inter]">Welcome to Adarsh English Medium School
+          <div class="bg-[#F59738] w-screen flex flex-col justify-center items-center p-6 md:p-[100px] overflow-x-hidden">
+            <h1 class="text-2xl md:text-4xl font-bold text-white font-[inter] text-center">
+                Welcome to Adarsh English Medium School
             </h1>
-            <p class="text-white text-md width-70% font-[inter] mt-[50px] whitespace-wrap text-center ">Adarsh English Medium School is proud to be recognized as the best English medium educational institution in Tenali, serving the community with excellence for over 35 years. Our student-centric approach, combined with a strong focus on the overall development of each child, sets us apart as a trusted choice for families seeking quality education at an affordable cost. 
-               
-                </p>
-                <p class="mt-[50px] text-white font-[inter] text-center line-clamp-1 whitespace-normal"> We believe in nurturing young minds with care, knowledge, and values, making Adarsh a leading destination for parents who want the best for their children’s academic and personal growth.</p>
-                    <div class=" flex bg-[#225BC6] w-[1235px] h-[300px] mt-[50px] rounded-[17px] justify-between items-center p-[50px] hover:scale-105 transition-transform duration-300">
+            <p class="text-white text-sm md:text-md max-w-[90%] md:max-w-[70%] font-[inter] mt-6 md:mt-[50px] text-center">
+                Adarsh English Medium School is proud to be recognized as the best English medium educational institution in Tenali, 
+                serving the community with excellence for over 35 years. Our student-centric approach, combined with a strong focus on the 
+                overall development of each child, sets us apart as a trusted choice for families seeking quality education at an affordable cost.
+            </p>
             
-                    <div  class="text-center mr-[50px]">
-                        <h2 class="font-bold text-3xl text-white mb-[30px] font-[inter] ">Our Mission</h2>
-                       <p class="text-white text-sm font-[inter] whitespace-normal   ">To provide a holistic and accessible English medium education that fosters academic excellence, ethical integrity, and personal growth, ensuring that every student is equipped to navigate life’s challenges and lead with compassion and confidence.
-                    </p>
-                    </div>
-                    <div  class="text-center">
-                        <h2 class="font-bold text-3xl text-white text-center  font-[inter] mb-[30px]">Our Vision</h2>
-                        <p class="text-white  text-sm font-[inter] whitespace-normal  ">To be a leading English medium educational institution that empowers every child with the wisdom, knowledge, and values needed to succeed in life and contribute positively to society, while ensuring education is accessible to all.
-                        </p>
-                       
-                    </div>
-                </div>
+            <p class="mt-6 md:mt-[50px] text-white font-[inter] text-center text-sm md:text-md">
+                We believe in nurturing young minds with care, knowledge, and values, making Adarsh a leading destination for parents 
+                who want the best for their children’s academic and personal growth.
+            </p>
+        
+            <!-- Mission & Vision Section -->
+            <div class="flex flex-col md:flex-row bg-[#225BC6] w-full md:w-[1235px] h-auto md:h-[300px] mt-6 md:mt-[50px] 
+                rounded-[17px] justify-between items-center p-6 md:p-[50px] hover:scale-105 transition-transform duration-300">
                 
-            
-          </div>
-          <div class=" text-center mt-[50px]  p-[100px]">
-            <h1 class="font-[inter] text-3xl text-[#F22D34]">Our Motto </h1>
-            <p class="font-[inter]  whitespace-normal text-md mt-[30px]">At Adarsh English Medium School, our guiding principle is encapsulated in our motto: ‘Wisdom is Light.’ This belief drives everything <br/> we do, inspiring us to enlighten minds and shape futures with the power of knowledge and strong values.
+                <!-- Mission Section -->
+                <div class="text-center mb-6 md:mb-0 md:mr-[50px] max-w-[90%] md:max-w-[50%]">
+                    <h2 class="font-bold text-2xl md:text-3xl text-white mb-4 md:mb-[30px] font-[inter]">
+                        Our Mission
+                    </h2>
+                    <p class="text-white text-sm md:text-md font-[inter]">
+                        To provide a holistic and accessible English medium education that fosters academic excellence, 
+                        ethical integrity, and personal growth, ensuring that every student is equipped to navigate life’s 
+                        challenges and lead with compassion and confidence.
+                    </p>
+                </div>
+        
+                <!-- Vision Section -->
+                <div class="text-center max-w-[90%] md:max-w-[50%]">
+                    <h2 class="font-bold text-2xl md:text-3xl text-white mb-4 md:mb-[30px] font-[inter]">
+                        Our Vision
+                    </h2>
+                    <p class="text-white text-sm md:text-md font-[inter]">
+                        To be a leading English medium educational institution that empowers every child with the wisdom, 
+                        knowledge, and values needed to succeed in life and contribute positively to society, while ensuring 
+                        education is accessible to all.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+          <div class="text-center mt-[50px] p-4 md:p-[100px]">
+            <h1 class="font-[inter] text-2xl md:text-3xl text-[#F22D34]">Our Motto</h1>
+            <p class="font-[inter] whitespace-normal text-sm md:text-md mt-4 md:mt-[30px]">
+                At Adarsh English Medium School, our guiding principle is encapsulated in our motto: 
+                ‘Wisdom is Light.’ This belief drives everything we do, inspiring us to enlighten minds 
+                and shape futures with the power of knowledge and strong values.
             </p>
         </div>
-        <div class="bg-[#25824D] flex justify-center items-center min-h-screen p-[100px]">
-
-            <div class="flex justify-between items-center max-w-[1235px] w-full mx-auto p-4">
+        
+        <div class="bg-[#25824D] flex flex-col md:flex-row justify-center items-center min-h-screen p-4 md:p-[100px] overflow-x-hidden">
+            <div class="flex flex-col md:flex-row justify-between items-center max-w-[1235px] w-full mx-auto p-4">
                 
                 <!-- Left Section -->
-                <div class="bg-white h-[608px] w-[516px] flex flex-col justify-between items-center p-4 
-                    opacity-0 scale-90 translate-y-10 animate-fade-in ">
-                    <h1 class="text-5xl text-[#F22D34] text-left ml-[-150px] mt-8 opacity-0 translate-y-5 animate-fade-in-delay hover:scale-105 transition-transform duration-300">
+                <div class="bg-white w-full md:w-[516px] flex flex-col justify-between items-center p-4 
+                    opacity-0 scale-90 translate-y-10 animate-fade-in">
+                    <h1 class="text-xl md:text-3xl lg:text-5xl text-[#F22D34] text-left mt-4 md:mt-8 
+                        opacity-0 translate-y-5 animate-fade-in-delay hover:scale-105 transition-transform duration-300">
                         Wisdom <br /> is Light
                     </h1>
-                    <img src="assets/aboutimage1.png" alt="about1" class="w-[502px] h-[344px] mt-6 opacity-0 translate-y-5 animate-fade-in-delay-2 hover:scale-105 transition-transform duration-300">
+                    <img src="assets/aboutimage1.png" alt="about1" 
+                        class="w-full max-w-[502px] h-auto mt-4 md:mt-6 opacity-0 translate-y-5 animate-fade-in-delay-2 
+                        hover:scale-105 transition-transform duration-300">
                 </div>
         
                 <!-- Right Section -->
-                <div class="max-w-md">
+                <div class="max-w-md w-full mt-6 md:mt-0">
                     <!-- Holistic Approach -->
-                    <div class="ml-[-100px] opacity-0 translate-x-[-30px] animate-slide-in ">
-                        <h2 class="font-bold text-2xl text-white font-inter hover:scale-105 transition-transform duration-300">
+                    <div class="opacity-0 translate-x-[-30px] animate-slide-in">
+                        <h2 class="font-bold text-xl md:text-2xl text-white font-inter 
+                            hover:scale-105 transition-transform duration-300">
                             A Holistic Approach to Education
                         </h2>
-                        <p class="text-white text-md font-inter whitespace-normal mt-[20px] hover:scale-105 transition-transform duration-300">
+                        <p class="text-white text-sm md:text-md font-inter whitespace-normal mt-4">
                             At Adarsh, we understand that true education goes beyond textbooks.
                             We offer a wide range of extracurricular activities, including sports, arts, and cultural events, 
                             to ensure that every child has the opportunity to explore their interests and develop their talents.
@@ -214,11 +241,12 @@
                     </div>
         
                     <!-- Growth and Expansion -->
-                    <div class="ml-[-100px] mt-[100px] opacity-0 translate-x-[-30px] animate-slide-in-delay ">
-                        <h2 class="font-bold text-2xl text-white font-inter hover:scale-105 transition-transform duration-300">
+                    <div class="mt-6 md:mt-[100px] opacity-0 translate-x-[-30px] animate-slide-in-delay">
+                        <h2 class="font-bold text-xl md:text-2xl text-white font-inter 
+                            hover:scale-105 transition-transform duration-300">
                             Growth and Expansion
                         </h2>
-                        <p class="text-white text-md font-inter whitespace-normal mt-[20px] hover:scale-105 transition-transform duration-300">
+                        <p class="text-white text-sm md:text-md font-inter whitespace-normal mt-4">
                             From our humble beginnings, Adarsh has grown into a respected institution with six campuses across 
                             Tenali and its surrounding areas. We now serve over 2,600 students, each of whom is supported 
                             by our team of more than 100 dedicated teachers and staff.
@@ -226,154 +254,186 @@
                     </div>
                 </div>
             </div>
+        </div>
+        
        
             
         </div>
     
            
+        <div class="flex items-center justify-center min-h-screen px-4 md:px-8 lg:px-16">
+            <div class="max-w-6xl mx-auto p-6">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-red-500 mb-8 font-inter">
+                    Why Choose Adarsh?
+                </h2>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-[#225BC6] text-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 min-h-[400px]">
+                        <img src="assets/graduation 1.png" alt="Academic Excellence" class="w-12 mb-4">
+                        <h3 class="text-lg md:text-xl font-bold mb-2 font-inter">Academic Excellence</h3>
+                        <p class="text-sm md:text-base font-inter">At Adarsh English Medium School, we prioritize academic excellence, offering a rigorous curriculum that challenges and inspires students. Our experienced faculty guides each student toward achieving their full potential, ensuring a strong foundation in core subjects and preparing them for success in higher education and beyond.
 
-            <div class=" flex items-center justify-center min-h-screen">
-                <div class="max-w-6xl mx-auto p-6">
-                    <h2 class="text-3xl font-bold text-center text-red-500 mb-8 font-inter">Why Choose Adarsh?</h2>
-                    <div class="grid md:grid-cols-3 lg:grid-cols-2 gap-6">
-                        <!-- Card 1 -->
-                        <div class="bg-[#225BC6] text-white p-6 rounded-lg shadow-lg animate-fadeInUp transform transition duration-500 hover:scale-105 w-[500px] h-[500px]">
-                            <img src="assets/graduation 1.png" alt="Academic Excellence" class="w-15 mb-4 mt-[20px]">
-                            <h3 class="text-xl font-bold mb-2 font-inter">Academic Excellence</h3>
-                            <p class="text-sm font-inter">At Adarsh English Medium School, we prioritize academic excellence, offering a rigorous curriculum that challenges and inspires students. Our experienced faculty guides each student toward achieving their full potential, ensuring a strong foundation in core subjects and preparing them for success in higher education and beyond.
-
-                            </p>
-                        </div>
-            
-                        <!-- Card 2 -->
-                        <div class="bg-[#E69100] text-white p-6 rounded-lg shadow-lg animate-fadeInUp transform transition duration-500 hover:scale-105 w-[500px] h-[500px]">
-                            <img src="assets/holistic-approach.png" alt="Holistic Development" class="w-15 mb-4 mt-[20px]">
-                            <h3 class="text-xl font-bold mb-2 font-inter">Holistic Development</h3>
-                            <p class="text-sm font-inter">We believe in nurturing the whole child at Adarsh. Our holistic approach includes not only academic learning but also physical education, arts, and moral development. By fostering creativity, teamwork, and ethical values, we help students become well-rounded individuals ready to thrive in all aspects of life.</p>
-                        </div>
-            
-                        <!-- Card 3 -->
-                        <div class="bg-[#25824D] text-white p-6 rounded-lg shadow-lg animate-fadeInUp transform transition duration-500 hover:scale-105 w-[500px] h-[500px]">
-                            <img src="assets/research-and-development.png" alt="Innovative Learning" class="w-15 mb-4 mt-[20px]">
-                            <h3 class="text-xl font-bold mb-2 font-inter">Innovative Learning</h3>
-                            <p class="text-sm font-inter">Adarsh embraces innovative learning techniques that make education engaging and effective. With the integration of technology in our classrooms, we encourage interactive and experiential learning. Our approach ensures that students develop critical thinking skills and adapt to the ever-changing demands of the modern world.
-                            </p>
-                        </div>
-            
-                        <!-- Card 4 -->
-                        <div class="bg-[#C72928] text-white p-6 rounded-lg shadow-lg animate-fadeInUp transform transition duration-500 hover:scale-105 w-[500px] h-[500px]">
-                            <img src="assets/namaste.png" alt="Ethical Foundation" class="w-15 mt-[20px] mb-4">
-                            <h3 class="text-xl font-bold mb-2 font-inter">Ethical Foundation</h3>
-                            <p class="text-sm font-inter">At Adarsh, education is rooted in strong ethical values. We emphasize the importance of honesty, integrity, and respect, guiding students to become compassionate and responsible citizens. Our ethical foundation shapes not just their academic journey, but also their character, preparing them to lead with wisdom and kindness.
-                            </p>
-                        </div>
-            
-                        <!-- Card 5 -->
-                        <div class="bg-[#F2B4B9] text-white p-6 rounded-lg shadow-lg animate-fadeInUp transform transition duration-500 hover:scale-105 w-[500px] h-[500px]">
-                            <img src="assets/hotel.png" alt="State-of-the-Art Infrastructure" class="w-15 mb-4 mt-[20px]">
-                            <h3 class="text-xl font-bold mb-2 font-inter">State-of-the-Art Infrastructure</h3>
-                            <p class="text-sm font-inter">Our state-of-the-art infrastructure provides a safe, comfortable, and inspiring environment for learning. With smart classrooms, well-equipped labs, and modern amenities, we offer students the best facilities to support their academic and extracurricular pursuits, ensuring they have everything they need to succeed.
-                            </p>
-                        </div>
-            
-                        <!-- Card 6 -->
-                        <div class="bg-[#D2EBFF] text-white p-6 rounded-lg shadow-lg animate-fadeInUp transform transition duration-500 hover:scale-105 w-[500px] h-[500px]">
-                            <img src="assets/class.png" alt="Accessible Education for All" class="w-15 mb-4 mt-[20px]">
-                            <h3 class="text-xl font-bold mb-2 font-inter]">Accessible Education for All</h3>
-                            <p class="text-sm font-inter">We are committed to providing accessible education to all children, regardless of their background. Adarsh offers quality education at an affordable cost, ensuring that every child has the opportunity to benefit from our comprehensive programs. We believe in equal opportunities for every student to learn and grow.</p>
-                        </div>
+                        </p>
+                    </div>
+        
+                    <!-- Card 2 -->
+                    <div class="bg-[#E69100] text-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 min-h-[400px]">
+                        <img src="assets/holistic-approach.png" alt="Holistic Development" class="w-12 mb-4">
+                        <h3 class="text-lg md:text-xl font-bold mb-2 font-inter">Holistic Development</h3>
+                        <p class="text-sm md:text-base font-inter">We believe in nurturing the whole child at Adarsh. Our holistic approach includes not only academic learning but also physical education, arts, and moral development. By fostering creativity, teamwork, and ethical values, we help students become well-rounded individuals ready to thrive in all aspects of life.</p>
+                    </div>
+        
+                    <!-- Card 3 -->
+                    <div class="bg-[#25824D] text-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 min-h-[400px]">
+                        <img src="assets/research-and-development.png" alt="Innovative Learning" class="w-12 mb-4">
+                        <h3 class="text-lg md:text-xl font-bold mb-2 font-inter">Innovative Learning</h3>
+                        <p class="text-sm md:text-base font-inter">Adarsh embraces innovative learning techniques that make education engaging and effective. With the integration of technology in our classrooms, we encourage interactive and experiential learning. Our approach ensures that students develop critical thinking skills and adapt to the ever-changing demands of the modern world.
+                        </p>
+                    </div>
+        
+                    <!-- Card 4 -->
+                    <div class="bg-[#C72928] text-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 min-h-[400px]">
+                        <img src="assets/namaste.png" alt="Ethical Foundation" class="w-12 mb-4">
+                        <h3 class="text-lg md:text-xl font-bold mb-2 font-inter">Ethical Foundation</h3>
+                        <p class="text-sm md:text-base font-inter">At Adarsh, education is rooted in strong ethical values. We emphasize the importance of honesty, integrity, and respect, guiding students to become compassionate and responsible citizens. Our ethical foundation shapes not just their academic journey, but also their character, preparing them to lead with wisdom and kindness.
+                        </p>
+                    </div>
+        
+                    <!-- Card 5 -->
+                    <div class="bg-[#F2B4B9] text-gray-800 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 min-h-[400px]">
+                        <img src="assets/hotel.png" alt="State-of-the-Art Infrastructure" class="w-12 mb-4">
+                        <h3 class="text-lg md:text-xl font-bold mb-2 font-inter">State-of-the-Art Infrastructure</h3>
+                        <p class="text-sm md:text-base font-inter">Our state-of-the-art infrastructure provides a safe, comfortable, and inspiring environment for learning. With smart classrooms, well-equipped labs, and modern amenities, we offer students the best facilities to support their academic and extracurricular pursuits, ensuring they have everything they need to succeed.
+                        </p>
+                    </div>
+        
+                    <!-- Card 6 -->
+                    <div class="bg-[#D2EBFF] text-gray-800 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 min-h-[400px]">
+                        <img src="assets/class.png" alt="Accessible Education for All" class="w-12 mb-4">
+                        <h3 class="text-lg md:text-xl font-bold mb-2 font-inter">Accessible Education for All</h3>
+                        <p class="text-sm md:text-base font-inter">We are committed to providing accessible education to all children, regardless of their background. Adarsh offers quality education at an affordable cost, ensuring that every child has the opportunity to benefit from our comprehensive programs. We believe in equal opportunities for every student to learn and grow.</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class=" mt-[20px] mb-[50px]">
-            <h1 class="text-3xl font-bold text-center text-red-500 mb-8 font-inter">Join the Adarsh Family</h1>
-            <p class="text-center text-grey font-inter">Discover the difference at Adarsh—where ‘Wisdom is Light’ and every child’s future is brightened.
-            </p>
-        </div>
-        <div class="bg-[#229F6A] w-screen h-screen flex flex-col items-center  p-8">
-            <iframe width="1200" height="350"  src="https://www.openstreetmap.org/export/embed.html?bbox=80.63198804855348%2C16.24370624695233%2C80.63438057899477%2C16.245297675058342&amp;layer=mapnik&amp;marker=16.24450196261525%2C80.63318431377411" style="border: 1px solid black "></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=16.244502&amp;mlon=80.633184#map=19/16.244502/80.633184"><button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md 
-                transition-transform duration-300 hover:scale-110 
-                hover:shadow-blue-500/50">
-  Larger View
-</button></a></small>
-            <div><footer class="bg-[#229F6A] text-white py-8">
-              <div class="max-w-6xl mx-auto px-6 grid grid-cols-5 gap-8">
-                  <!-- Company Info -->
-                  <div>
-                      <h2 class="font-bold text-yellow-400">Company Info</h2>
-                      <ul class="mt-2 space-y-1">
-                          <li><a href="#" class="hover:underline">About Us</a></li>
-                          <li><a href="#" class="hover:underline">Carrier</a></li>
-                          <li><a href="#" class="hover:underline">We are hiring</a></li>
-                          <li><a href="#" class="hover:underline">Blog</a></li>
-                      </ul>
-                  </div>
-          
-                  <!-- Legal -->
-                  <div>
-                      <h2 class="font-bold text-yellow-400">Legal</h2>
-                      <ul class="mt-2 space-y-1">
-                          <li><a href="#" class="hover:underline">About Us</a></li>
-                          <li><a href="#" class="hover:underline">Carrier</a></li>
-                          <li><a href="#" class="hover:underline">We are hiring</a></li>
-                          <li><a href="#" class="hover:underline">Blog</a></li>
-                      </ul>
-                  </div>
-          
-                  <!-- Features -->
-                  <div>
-                      <h2 class="font-bold text-yellow-400">Features</h2>
-                      <ul class="mt-2 space-y-1">
-                          <li><a href="#" class="hover:underline">Business Marketing</a></li>
-                          <li><a href="#" class="hover:underline">User Analytic</a></li>
-                          <li><a href="#" class="hover:underline">Live Chat</a></li>
-                          <li><a href="#" class="hover:underline">Unlimited Support</a></li>
-                      </ul>
-                  </div>
-          
-                  <!-- Resources -->
-                  <div>
-                      <h2 class="font-bold text-yellow-400">Resources</h2>
-                      <ul class="mt-2 space-y-1">
-                          <li><a href="#" class="hover:underline">IOS & Android</a></li>
-                          <li><a href="#" class="hover:underline">Watch a Demo</a></li>
-                          <li><a href="#" class="hover:underline">Customers</a></li>
-                          <li><a href="#" class="hover:underline">API</a></li>
-                      </ul>
-                  </div>
-          
-                  <!-- Get In Touch -->
-                  <div>
-                      <h2 class="font-bold text-yellow-400">Get In Touch</h2>
-                      <ul class="mt-2 space-y-2">
-                          <li class="flex items-center gap-2">
-                              <img src="assets/bx_bx-phone.png"/> <span>+919299997557</span>
-                          </li>
-                          <li class="flex items-center gap-2">
-                              <img src="assets/Vector (5).png" alt=""/> <span>Amaravathi Plots,tenali -522202 Andhra Pradesh</span>
-                          </li>
-                          <li class="flex items-center gap-2">
-                              <img src="assets/carbon_send-alt.png"/> <span>adarsh.tenali@gmail.com</span>
-                          </li>
-                      </ul>
-          
-                      <!-- Social Icons -->
-                      <div class="flex gap-4 mt-4 text-xl">
-                          <a href="#" class="hover:text-gray-300"><img src="assets/facebook.png"/></a>
-                          <a href="#" class="hover:text-gray-300"><img src="assets/ant-design_instagram-outlined.png"/></a>
-                          <a href="#" class="hover:text-gray-300"><img src="assets/ant-design_twitter-outlined.png"/></a>
-                      </div>
-                  </div>
-              </div>
-          </footer>
-          
-          
-          
-        </div>
         
         </div>
+
+        <div class="mt-5 mb-12 px-4 md:px-8 lg:px-16">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-red-500 mb-4 md:mb-6 font-inter">
+                Join the Adarsh Family
+            </h1>
+            <p class="text-center text-gray-600 text-sm md:text-base lg:text-lg font-inter max-w-2xl mx-auto">
+                Discover the difference at Adarsh—where ‘Wisdom is Light’ and every child’s future is brightened.
+            </p>
+        </div>
+        
+        <div class="bg-[#229F6A] w-full min-h-screen flex flex-col items-center p-8 overflow-x-hidden">
+  
+            <!-- Map Embed (Responsive) -->
+            <iframe 
+                class="w-full max-w-[1200px] h-[350px]" 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=80.63198804855348%2C16.24370624695233%2C80.63438057899477%2C16.245297675058342&amp;layer=mapnik&amp;marker=16.24450196261525%2C80.63318431377411" 
+                style="border: 1px solid black;">
+            </iframe>
+        
+            <!-- Larger View Button -->
+            <small class="mt-4">
+                <a href="https://www.openstreetmap.org/?mlat=16.244502&amp;mlon=80.633184#map=19/16.244502/80.633184">
+                    <button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md 
+                        transition-transform duration-300 hover:scale-110 
+                        hover:shadow-blue-500/50">
+                        Larger View
+                    </button>
+                </a>
+            </small>
+        
+            <!-- Footer Section -->
+            <footer class="bg-[#229F6A] text-white py-8 w-full">
+                <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center md:text-left">
+                    
+                    <!-- Company Info -->
+                    <div>
+                        <h2 class="font-bold text-yellow-400">Company Info</h2>
+                        <ul class="mt-2 space-y-1">
+                            <li><a href="#" class="hover:underline">About Us</a></li>
+                            <li><a href="#" class="hover:underline">Career</a></li>
+                            <li><a href="#" class="hover:underline">We are hiring</a></li>
+                            <li><a href="#" class="hover:underline">Blog</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Legal -->
+                    <div>
+                        <h2 class="font-bold text-yellow-400">Legal</h2>
+                        <ul class="mt-2 space-y-1">
+                            <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                            <li><a href="#" class="hover:underline">Compliance</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Features -->
+                    <div>
+                        <h2 class="font-bold text-yellow-400">Features</h2>
+                        <ul class="mt-2 space-y-1">
+                            <li><a href="#" class="hover:underline">Business Marketing</a></li>
+                            <li><a href="#" class="hover:underline">User Analytics</a></li>
+                            <li><a href="#" class="hover:underline">Live Chat</a></li>
+                            <li><a href="#" class="hover:underline">Unlimited Support</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Resources -->
+                    <div>
+                        <h2 class="font-bold text-yellow-400">Resources</h2>
+                        <ul class="mt-2 space-y-1">
+                            <li><a href="#" class="hover:underline">iOS & Android</a></li>
+                            <li><a href="#" class="hover:underline">Watch a Demo</a></li>
+                            <li><a href="#" class="hover:underline">Customers</a></li>
+                            <li><a href="#" class="hover:underline">API</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Get In Touch -->
+                    <div>
+                        <h2 class="font-bold text-yellow-400">Get In Touch</h2>
+                        <ul class="mt-2 space-y-2">
+                            <li class="flex items-center justify-center md:justify-start gap-2">
+                                <img src="assets/bx_bx-phone.png" alt="Phone" class="w-5 h-5"/> 
+                                <span>+91 9299997557</span>
+                            </li>
+                            <li class="flex items-center justify-center md:justify-start gap-2">
+                                <img src="assets/Vector (5).png" alt="Location" class="w-5 h-5"/> 
+                                <span>Amaravathi Plots, Tenali - 522202, Andhra Pradesh</span>
+                            </li>
+                            <li class="flex items-center justify-center md:justify-start gap-2">
+                                <img src="assets/carbon_send-alt.png" alt="Email" class="w-5 h-5"/> 
+                                <span>adarsh.tenali@gmail.com</span>
+                            </li>
+                        </ul>
+        
+                        <!-- Social Icons -->
+                        <div class="flex justify-center md:justify-start gap-4 mt-4">
+                            <a href="#" class="hover:text-gray-300"><img src="assets/facebook.png" class="w-6 h-6"/></a>
+                            <a href="#" class="hover:text-gray-300"><img src="assets/ant-design_instagram-outlined.png" class="w-6 h-6"/></a>
+                            <a href="#" class="hover:text-gray-300"><img src="assets/ant-design_twitter-outlined.png" class="w-6 h-6"/></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('menu-toggle').addEventListener('click', function () {
+                    const menu = document.getElementById('mobile-menu');
+                    menu.classList.toggle('hidden');
+                });
+            });
+        </script>
   
    
 </body>

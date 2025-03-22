@@ -6,11 +6,7 @@
     <title>Academics</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
     <script src="https://cdn.tailwindcss.com"></script> <!-- Add Tailwind if not already included -->
-     <script>
-        document.getElementById("menu-toggle").addEventListener("click", function () {
-            document.getElementById("mobile-menu").classList.toggle("hidden");
-        });
-    </script>
+    
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
@@ -42,10 +38,17 @@
     .nav-item:hover {
         transform: scale(1.1); /* Scale up by 10% */
         color: #ef4444; /* Red-500 */
+
+
     }
+
+    #mobile-menu{
+        z-index: 50;
+    }
+
 </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 overflow-x-hidden">
 
     <header class="bg-white  py-4 px-8 flex items-end shadow-xl  top-0">
         <nav class="flex justify-between items-center">
@@ -56,7 +59,7 @@
                 <li><a href="index.html" class="nav-item">Home</a></li>
                 <li><a href="About.html" class="nav-item">About Us</a></li>
                 <li><a href="Academics.html" class="nav-item">Academics</a></li>
-                <li><a href="#" class="nav-item">Campuses</a></li>
+                <li><a href="Campus.html" class="nav-item">Campuses</a></li>
                 <li><a href="#" class="nav-item">Events / Gallery</a></li>
                 <li><a href="#" class="nav-item">Results</a></li>
                 <li><a href="#" class="nav-item">Careers</a></li>
@@ -69,12 +72,12 @@
         </nav>
 
         <!-- Mobile Menu -->
-        <div class="hidden md:hidden bg-white w-full absolute left-0 top-16 shadow-md" id="mobile-menu">
-            <ul class="flex flex-col text-center space-y-4 py-4">
+        <div class="hidden md:hidden bg-white w-full absolute left-0 top-16 shadow-md z-50" id="mobile-menu">
+            <ul class="flex flex-col text-center space-y-4 py-4 ml-[10px] mt-[10px]">
                 <li><a href="index.html" class="nav-item">Home</a></li>
                 <li><a href="About.html" class="nav-item">About Us</a></li>
                 <li><a href="Academics.html" class="nav-item">Academics</a></li>
-                <li><a href="#" class="nav-item">Campuses</a></li>
+                <li><a href="Campus.html" class="nav-item">Campuses</a></li>
                 <li><a href="#" class="nav-item">Events / Gallery</a></li>
                 <li><a href="#" class="nav-item">Results</a></li>
                 <li><a href="#" class="nav-item">Careers</a></li>
@@ -84,7 +87,7 @@
         </div>
     </header>
     <div>
-        <img src="assets/Academicsbanner.png" alt="banner" class="w-screen object-cover"/>
+        <img src="assets/Academicsbanner.png" alt="banner" class="w-screen object-cover overflow-hidden"/>
 
       </div>
 
@@ -92,65 +95,77 @@
         <h1 class="font-inter text-3xl text-[#F22D34] text-center font-bold-500 mt-[100px]" >Academics</h1>
 
       </div>
-      <div class="flex flex-col justify-center items-center min-h-screen ">
-        <div class="bg-[#FFB04C] h-[450px] w-[1108px] mt-[50px] border rounded-lg flex items-center justify-center p-[40px] gap-[20px] transition-transform hover:scale-105" data-aos="fade-up">
+      <div class="flex flex-col  justify-center items-center min-h-screen overflow-x-hidden"> 
+        <div class="bg-[#FFB04C] h-auto md:h-[450px] w-full md:w-[1108px] mt-[50px] border rounded-lg flex flex-col md:flex-row items-center justify-center p-[40px] gap-[20px] transition-transform hover:scale-105" data-aos="fade-up">
             <!-- Image Container with Border -->
-            <div class="border border-green-500 w-[420px] h-[363px] flex items-center justify-center mr-[50px]  overflow-hidden">
-                <img src="assets/Academicsst1.png" alt="studentbanner" class="w-[420px] h-[363px] object-cover transform transition duration-500 hover:scale-110" />
+            <div class="border border-green-500 w-[300px] md:w-[420px] h-[363px] flex items-center justify-center md:mr-[50px] overflow-hidden">
+                <img src="assets/Academicsst1.png" alt="studentbanner" class="w-full md:w-[420px] h-[363px] object-cover transform transition duration-500 hover:scale-110" />
             </div>
-    
+        
             <!-- Text Content -->
-            <div class="w-[500px]" data-aos="fade-left">
-                <h1 class="font-inter text-3xl text-[#F22D34] font-bold leading-snug ">
+            <div class="w-full md:w-[500px]" data-aos="fade-left">
+                <h1 class="font-inter text-3xl text-[#F22D34] font-bold leading-snug">
                     Academics at Adarsh English Medium School
                 </h1>
                 <p class="font-inter text-lg mt-[10px] leading-relaxed">
-                    At Adarsh English Medium School, we focus on building a strong academic foundation that ensures success in education and beyond. 
+                    At Adarsh English Medium School, we focus on building a strong academic foundation that ensures success in education and beyond.
                     Our curriculum combines rigorous academics with opportunities for personal growth, offering a well-rounded education for every student.
                 </p>
             </div>
         </div>
-        <div class=" h-[450px] w-[1108px] mt-[50px]  flex items-center justify-center p-[40px] gap-[20px] transition-transform hover:scale-105" data-aos="fade-up">
-          
+        
+        <div class="h-auto md:h-[450px] w-full max-w-[1108px] mt-[50px] border rounded-lg flex flex-col md:flex-row items-center justify-center px-5 md:px-[50px] gap-[20px] transition-transform hover:scale-105 mx-auto" data-aos="fade-up">
+  
+            <div class="border border-green-500 flex md:hidden w-full max-w-[420px] h-[363px] items-center justify-center overflow-hidden">
+                <img src="assets/Mask group (2).png" alt="studentbanner" class="w-full h-full object-cover transform transition duration-500 hover:scale-110" />
+            </div>
             <!-- Text Content -->
-            <div class="w-[500px]" data-aos="fade-left">
-                <h1 class="font-inter text-3xl text-[#F22D34] font-bold leading-snug">
+            <div class="w-full md:w-[500px]" data-aos="fade-left">
+                <h1 class="font-inter text-3xl text-[#F22D34] font-bold leading-snug  md:text-left">
                     Curriculum
                 </h1>
-                <p class="font-inter text-lg mt-[10px] leading-relaxed ">
+                <p class="font-inter text-lg mt-[10px] leading-relaxed  md:text-left">
                     At Adarsh English Medium School, our curriculum nurtures a love for learning while meeting educational standards. We use national textbooks for Nursery to 5th grade, focusing on core subjects and play-based learning in kindergarten. For 6th to 10th grade, we follow the state syllabus, ensuring in-depth understanding and preparation for state board exams.
                 </p>
             </div>
-              <!-- Image Container with Border -->
-              <div class="border border-green-500 w-[420px] h-[363px] flex items-center justify-center ml-[50px] overflow-hidden">
-                <img src="assets/Mask group (2).png" alt="studentbanner" class="w-[420px] h-[363px] object-cover  transform transition duration-500 hover:scale-110" />
-            </div>
-    
-        </div>
-
-
-        <div class="bg-[#FFB04C] h-[450px] w-[1108px] mt-[50px] border rounded-lg flex items-center justify-center p-[40px] gap-[20px] transition-transform hover:scale-105" data-aos="fade-up">
+        
             <!-- Image Container with Border -->
-            <div class="border border-green-500 w-[420px] h-[363px] flex items-center justify-center mr-[50px]  overflow-hidden">
-                <img src="assets/Mask group (3).png" alt="studentbanner" class="w-[420px] h-[363px] object-cover transform transition duration-500 hover:scale-110" />
+            <div class="border border-green-500 hidden md:flex w-full max-w-[420px] h-[363px] items-center justify-center md:ml-[50px] overflow-hidden">
+                <img src="assets/Mask group (2).png" alt="studentbanner" class="w-full h-full object-cover transform transition duration-500 hover:scale-110" />
             </div>
-    
+        
+        
+        </div>
+        
+
+
+        <div class="bg-[#FFB04C] h-auto md:h-[450px] w-full max-w-[1108px] mt-[50px] border rounded-lg flex flex-col md:flex-row items-center justify-center px-5 md:px-[40px] gap-[20px] transition-transform hover:scale-105 mx-auto" data-aos="fade-up">
+  
+            <!-- Image Container (Adjusts for responsiveness) -->
+            <div class="border border-green-500 w-full max-w-[420px] h-[363px] flex items-center justify-center overflow-hidden mx-auto md:mx-0 md:mr-[50px]">
+                <img src="assets/Mask group (3).png" alt="studentbanner" class="w-full h-full object-cover transform transition duration-500 hover:scale-110" />
+            </div>
+        
             <!-- Text Content -->
-            <div class="w-[500px]" data-aos="fade-left">
-                <h1 class="font-inter text-3xl text-[#F22D34] font-bold leading-snug ">
+            <div class="w-full md:w-[500px]  md:text-left" data-aos="fade-left">
+                <h1 class="font-inter text-3xl text-[#F22D34] font-bold leading-snug">
                     IIT Coaching
                 </h1>
                 <p class="font-inter text-lg mt-[10px] leading-relaxed">
                     At Adarsh English Medium School, we offer specialized IIT coaching from Class VI to help students excel in competitive exams. Regular IIT tests assess progress, and top performers receive certificates to inspire excellence.
                 </p>
             </div>
+        
         </div>
+        
 
 
-        <div class=" h-[450px] w-[1108px] mt-[50px]  flex items-center justify-center p-[40px] gap-[20px] transition-transform hover:scale-105" data-aos="fade-up">
-          
+        <div class=" h-auto md:h-[450px] w-full max-w-[1108px] mt-[50px] border rounded-lg flex flex-col md:flex-row items-center justify-center px-5 md:px-[50px] gap-[20px] transition-transform hover:scale-105 mx-auto" data-aos="fade-up">
+            <div class="border border-green-500 md:hidden md:flex w-full max-w-[420px] h-[363px] items-center justify-center md:ml-[50px] overflow-hidden">
+                <img src="assets/Mask group (4).png" alt="studentbanner" class="w-[420px] h-[363px] object-cover  transform transition duration-500 hover:scale-110" />
+            </div>
             <!-- Text Content -->
-            <div class="w-[500px]" data-aos="fade-left">
+            <div class="w-full md:w-[500px]  md:text-left" data-aos="fade-left">
                 <h1 class="font-inter text-3xl text-[#F22D34] font-bold leading-snug">
                     Assessment and Examination
                 </h1>
@@ -159,122 +174,143 @@
                 </p>
             </div>
               <!-- Image Container with Border -->
-              <div class="border border-green-500 w-[420px] h-[363px] flex items-center justify-center ml-[50px] overflow-hidden">
+              <div class="border border-green-500 hidden md:flex w-full max-w-[420px] h-[363px] items-center justify-center md:ml-[50px] overflow-hidden">
                 <img src="assets/Mask group (4).png" alt="studentbanner" class="w-[420px] h-[363px] object-cover  transform transition duration-500 hover:scale-110" />
             </div>
     
         </div>
 
 
-        <div class="bg-[#FFB04C] h-[450px] w-[1108px] mt-[50px] border rounded-lg flex items-center justify-center p-[40px] gap-[20px] transition-transform hover:scale-105" data-aos="fade-up">
-            <!-- Image Container with Border -->
-            <div class="border border-green-500 w-[420px] h-[363px] flex items-center justify-center mr-[50px]  overflow-hidden">
-                <img src="assets/Mask group (5).png" alt="studentbanner" class="w-[420px] h-[363px] object-cover transform transition duration-500 hover:scale-110" />
+
+        <div class="bg-[#FFB04C] h-auto md:h-[450px] w-full max-w-[1108px] mt-[50px] border rounded-lg flex flex-col md:flex-row items-center justify-center px-5 md:px-[40px] gap-[20px] transition-transform hover:scale-105 mx-auto" data-aos="fade-up">
+  
+            <!-- Image Container (Adjusts for responsiveness) -->
+            <div class="border border-green-500 w-full max-w-[420px] h-[363px] flex items-center justify-center overflow-hidden mx-auto md:mx-0 md:mr-[50px]">
+                <img src="assets/Mask group (5).png" alt="studentbanner" class="w-full h-full object-cover transform transition duration-500 hover:scale-110" />
             </div>
-    
+        
             <!-- Text Content -->
-            <div class="w-[500px]" data-aos="fade-left">
-                <h1 class="font-inter text-3xl text-[#F22D34] font-bold leading-snug ">
+            <div class="w-full md:w-[500px]  md:text-left" data-aos="fade-left">
+                <h1 class="font-inter text-3xl text-[#F22D34] font-bold leading-snug">
                     Micro-Level Day-Wise Planning
-                    
                 </h1>
                 <p class="font-inter text-lg mt-[10px] leading-relaxed">
                     At Adarsh English Medium School, our micro-level day-wise planning maximizes learning outcomes. By breaking down the curriculum into daily objectives, we focus on each student's needs, helping them reach their full potential.
                 </p>
             </div>
+        
         </div>
         
     </div>
 
     
-
-    <div class="bg-[#229F6A] w-screen h-screen flex flex-col items-center  p-8 mt-[300px]">
-        <iframe width="1200" height="350"  src="https://www.openstreetmap.org/export/embed.html?bbox=80.63198804855348%2C16.24370624695233%2C80.63438057899477%2C16.245297675058342&amp;layer=mapnik&amp;marker=16.24450196261525%2C80.63318431377411" style="border: 1px solid black "></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=16.244502&amp;mlon=80.633184#map=19/16.244502/80.633184"><button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md 
-            transition-transform duration-300 hover:scale-110 
-            hover:shadow-blue-500/50">
-Larger View
-</button></a></small>
-        <div><footer class="bg-[#229F6A] text-white py-8">
-          <div class="max-w-6xl mx-auto px-6 grid grid-cols-5 gap-8">
-              <!-- Company Info -->
-              <div>
-                  <h2 class="font-bold text-yellow-400">Company Info</h2>
-                  <ul class="mt-2 space-y-1">
-                      <li><a href="#" class="hover:underline">About Us</a></li>
-                      <li><a href="#" class="hover:underline">Carrier</a></li>
-                      <li><a href="#" class="hover:underline">We are hiring</a></li>
-                      <li><a href="#" class="hover:underline">Blog</a></li>
-                  </ul>
-              </div>
-      
-              <!-- Legal -->
-              <div>
-                  <h2 class="font-bold text-yellow-400">Legal</h2>
-                  <ul class="mt-2 space-y-1">
-                      <li><a href="#" class="hover:underline">About Us</a></li>
-                      <li><a href="#" class="hover:underline">Carrier</a></li>
-                      <li><a href="#" class="hover:underline">We are hiring</a></li>
-                      <li><a href="#" class="hover:underline">Blog</a></li>
-                  </ul>
-              </div>
-      
-              <!-- Features -->
-              <div>
-                  <h2 class="font-bold text-yellow-400">Features</h2>
-                  <ul class="mt-2 space-y-1">
-                      <li><a href="#" class="hover:underline">Business Marketing</a></li>
-                      <li><a href="#" class="hover:underline">User Analytic</a></li>
-                      <li><a href="#" class="hover:underline">Live Chat</a></li>
-                      <li><a href="#" class="hover:underline">Unlimited Support</a></li>
-                  </ul>
-              </div>
-      
-              <!-- Resources -->
-              <div>
-                  <h2 class="font-bold text-yellow-400">Resources</h2>
-                  <ul class="mt-2 space-y-1">
-                      <li><a href="#" class="hover:underline">IOS & Android</a></li>
-                      <li><a href="#" class="hover:underline">Watch a Demo</a></li>
-                      <li><a href="#" class="hover:underline">Customers</a></li>
-                      <li><a href="#" class="hover:underline">API</a></li>
-                  </ul>
-              </div>
-      
-              <!-- Get In Touch -->
-              <div>
-                  <h2 class="font-bold text-yellow-400">Get In Touch</h2>
-                  <ul class="mt-2 space-y-2">
-                      <li class="flex items-center gap-2">
-                          <img src="assets/bx_bx-phone.png"/> <span>+919299997557</span>
-                      </li>
-                      <li class="flex items-center gap-2">
-                          <img src="assets/Vector (5).png" alt=""/> <span>Amaravathi Plots,tenali -522202 Andhra Pradesh</span>
-                      </li>
-                      <li class="flex items-center gap-2">
-                          <img src="assets/carbon_send-alt.png"/> <span>adarsh.tenali@gmail.com</span>
-                      </li>
-                  </ul>
-      
-                  <!-- Social Icons -->
-                  <div class="flex gap-4 mt-4 text-xl">
-                      <a href="#" class="hover:text-gray-300"><img src="assets/facebook.png"/></a>
-                      <a href="#" class="hover:text-gray-300"><img src="assets/ant-design_instagram-outlined.png"/></a>
-                      <a href="#" class="hover:text-gray-300"><img src="assets/ant-design_twitter-outlined.png"/></a>
-                  </div>
-              </div>
-          </div>
-      </footer>
-      
-      
-      
+    <div class="bg-[#229F6A] w-full min-h-screen flex flex-col items-center p-8 mt-[100px]">
+  
+        <!-- Map Embed (Responsive) -->
+        <iframe 
+            class="w-full max-w-[1200px] h-[350px]" 
+            src="https://www.openstreetmap.org/export/embed.html?bbox=80.63198804855348%2C16.24370624695233%2C80.63438057899477%2C16.245297675058342&amp;layer=mapnik&amp;marker=16.24450196261525%2C80.63318431377411" 
+            style="border: 1px solid black;">
+        </iframe>
+    
+        <!-- Larger View Button -->
+        <small class="mt-4">
+            <a href="https://www.openstreetmap.org/?mlat=16.244502&amp;mlon=80.633184#map=19/16.244502/80.633184">
+                <button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md 
+                    transition-transform duration-300 hover:scale-110 
+                    hover:shadow-blue-500/50">
+                    Larger View
+                </button>
+            </a>
+        </small>
+    
+        <!-- Footer Section -->
+        <footer class="bg-[#229F6A] text-white py-8 w-full">
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center md:text-left">
+                
+                <!-- Company Info -->
+                <div>
+                    <h2 class="font-bold text-yellow-400">Company Info</h2>
+                    <ul class="mt-2 space-y-1">
+                        <li><a href="#" class="hover:underline">About Us</a></li>
+                        <li><a href="#" class="hover:underline">Career</a></li>
+                        <li><a href="#" class="hover:underline">We are hiring</a></li>
+                        <li><a href="#" class="hover:underline">Blog</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Legal -->
+                <div>
+                    <h2 class="font-bold text-yellow-400">Legal</h2>
+                    <ul class="mt-2 space-y-1">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Compliance</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Features -->
+                <div>
+                    <h2 class="font-bold text-yellow-400">Features</h2>
+                    <ul class="mt-2 space-y-1">
+                        <li><a href="#" class="hover:underline">Business Marketing</a></li>
+                        <li><a href="#" class="hover:underline">User Analytics</a></li>
+                        <li><a href="#" class="hover:underline">Live Chat</a></li>
+                        <li><a href="#" class="hover:underline">Unlimited Support</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Resources -->
+                <div>
+                    <h2 class="font-bold text-yellow-400">Resources</h2>
+                    <ul class="mt-2 space-y-1">
+                        <li><a href="#" class="hover:underline">iOS & Android</a></li>
+                        <li><a href="#" class="hover:underline">Watch a Demo</a></li>
+                        <li><a href="#" class="hover:underline">Customers</a></li>
+                        <li><a href="#" class="hover:underline">API</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Get In Touch -->
+                <div>
+                    <h2 class="font-bold text-yellow-400">Get In Touch</h2>
+                    <ul class="mt-2 space-y-2">
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <img src="assets/bx_bx-phone.png" alt="Phone" class="w-5 h-5"/> 
+                            <span>+91 9299997557</span>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <img src="assets/Vector (5).png" alt="Location" class="w-5 h-5"/> 
+                            <span>Amaravathi Plots, Tenali - 522202, Andhra Pradesh</span>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <img src="assets/carbon_send-alt.png" alt="Email" class="w-5 h-5"/> 
+                            <span>adarsh.tenali@gmail.com</span>
+                        </li>
+                    </ul>
+    
+                    <!-- Social Icons -->
+                    <div class="flex justify-center md:justify-start gap-4 mt-4">
+                        <a href="#" class="hover:text-gray-300"><img src="assets/facebook.png" class="w-6 h-6"/></a>
+                        <a href="#" class="hover:text-gray-300"><img src="assets/ant-design_instagram-outlined.png" class="w-6 h-6"/></a>
+                        <a href="#" class="hover:text-gray-300"><img src="assets/ant-design_twitter-outlined.png" class="w-6 h-6"/></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
     
-    </div>
-
     
     
     
-   
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('menu-toggle').addEventListener('click', function () {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            });
+        });
+    </script>
    
 
 </body>
