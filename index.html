@@ -91,6 +91,18 @@
 </script>
 
 
+<style>
+    /* Enhanced Animation for GPA text */
+    @keyframes moveUpDown {
+        0%, 100% { transform: translateY(100px); opacity: 0; }
+        50% { transform: translateY(-100px); opacity: 1; }
+    }
+    .animate-gpa {
+        animation: moveUpDown 3s infinite ease-in-out;
+    }
+</style>
+
+
    
 
 </head>
@@ -116,26 +128,26 @@
                 <li><a href="About.html" class="nav-item">About Us</a></li>
                 <li><a href="Academics.html" class="nav-item">Academics</a></li>
                 <li><a href="Campus.html" class="nav-item">Campuses</a></li>
-                <li><a href="#" class="nav-item">Events / Gallery</a></li>
-                <li><a href="#" class="nav-item">Results</a></li>
+                <li><a href="Gallery.html" class="nav-item">Events / Gallery</a></li>
+                <li><a href="Results.html" class="nav-item">Results</a></li>
                 <li><a href="#" class="nav-item">Careers</a></li>
                 <li><a href="#" class="nav-item">Admissions</a></li>
                 <li><a href="#" class="nav-item">Contact Us</a></li>
             </ul>
-            <button class="md:hidden block text-gray-800 focus:outline-none text-2xl" id="menu-toggle">
+            <button class="md:hidden block text-gray-800 focus:outline-none text-2x text-white" id="menu-toggle">
                 ☰
             </button>
         </nav>
     
         <!-- Mobile Menu -->
-        <div class="hidden md:hidden bg-white w-full absolute left-0 top-full shadow-md" id="mobile-menu">
+        <div class="hidden md:hidden bg-white text-black w-full absolute left-0 top-full shadow-md" id="mobile-menu">
             <ul class="flex flex-col text-center space-y-4 py-4">
                 <li><a href="index.html" class="nav-item">Home</a></li>
                 <li><a href="About.html" class="nav-item">About Us</a></li>
                 <li><a href="Academics.html" class="nav-item">Academics</a></li>
                 <li><a href="Campus.html" class="nav-item">Campuses</a></li>
-                <li><a href="#" class="nav-item">Events / Gallery</a></li>
-                <li><a href="#" class="nav-item">Results</a></li>
+                <li><a href="Gallery.html" class="nav-item">Events / Gallery</a></li>
+                <li><a href="Results.html" class="nav-item">Results</a></li>
                 <li><a href="#" class="nav-item">Careers</a></li>
                 <li><a href="#" class="nav-item">Admissions</a></li>
                 <li><a href="#" class="nav-item">Contact Us</a></li>
@@ -300,7 +312,21 @@
       As we continue our tradition of excellence, we warmly welcome you to the Adarsh family. See how our focus on overall growth, guided by the belief that ‘Wisdom is Light,’ helps every child’s future shine with knowledge, care, and strong values. Find out what makes Adarsh unique.
     </p>
     
-    <img src="assets/Component 3.png" alt="groupcomponent" class=" mt-6"/>
+    <div  class="flex justify-center items-center min-h-screen ">
+
+        <!-- Card Container -->
+        <div class="relative w-[90%] md:w-[70%] lg:w-[80%] bg-[#BFE3F5] rounded-[30px] shadow-lg overflow-hidden p-4 flex justify-center items-center">
+            
+            <!-- Floating GPA text behind the image -->
+            <div class="absolute text-gray-300 text-[100px] font-bold animate-gpa opacity-50">
+                9/10 GPA
+            </div>
+    
+            <!-- Image -->
+            <img src="assets/KRS00476 copy 3.png" alt="Students" 
+                class="relative w-full h-auto rounded-[25px] object-cover z-10 ">
+        </div>
+    </div>
   </div>
 
   <!-- Footer Image -->
@@ -436,8 +462,8 @@
     </small>
 
     <!-- Footer Section -->
-    <footer class="bg-[#229F6A] text-white py-8 w-full">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center md:text-left">
+    <footer class="bg-[#229F6A] text-white py-8 w-full text-left md:text-left">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 ">
             
             <!-- Company Info -->
             <div>
@@ -483,25 +509,25 @@
             </div>
 
             <!-- Get In Touch -->
-            <div>
-                <h2 class="font-bold text-yellow-400">Get In Touch</h2>
+            <div class="text-left md:text-left">
+                <h2 class="font-bold text-yellow-400 ">Get In Touch</h2>
                 <ul class="mt-2 space-y-2">
-                    <li class="flex items-center justify-center md:justify-start gap-2">
+                    <li class="flex items-center justify-start md:justify-start gap-2">
                         <img src="assets/bx_bx-phone.png" alt="Phone" class="w-5 h-5"/> 
                         <span>+91 9299997557</span>
                     </li>
-                    <li class="flex items-center justify-center md:justify-start gap-2">
+                    <li class="flex items-center justify-start md:justify-start gap-2">
                         <img src="assets/Vector (5).png" alt="Location" class="w-5 h-5"/> 
                         <span>Amaravathi Plots, Tenali - 522202, Andhra Pradesh</span>
                     </li>
-                    <li class="flex items-center justify-center md:justify-start gap-2">
+                    <li class="flex items-center justify-start md:justify-start gap-2">
                         <img src="assets/carbon_send-alt.png" alt="Email" class="w-5 h-5"/> 
                         <span>adarsh.tenali@gmail.com</span>
                     </li>
                 </ul>
 
                 <!-- Social Icons -->
-                <div class="flex justify-center md:justify-start gap-4 mt-4">
+                <div class="flex justify-start md:justify-start gap-4 mt-4">
                     <a href="#" class="hover:text-gray-300"><img src="assets/facebook.png" class="w-6 h-6"/></a>
                     <a href="#" class="hover:text-gray-300"><img src="assets/ant-design_instagram-outlined.png" class="w-6 h-6"/></a>
                     <a href="#" class="hover:text-gray-300"><img src="assets/ant-design_twitter-outlined.png" class="w-6 h-6"/></a>
