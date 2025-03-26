@@ -6,776 +6,454 @@
     <title>Adarsh Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      .shadow-smoke {
-          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-          position: relative;
-      }
-    
-  </style>
-    <style>
-      .dotted-line {
-          background: url('assets/Vector 1.png') no-repeat center center;
-          background-size: auto;
-          margin: 150px -100px; /* More concise */
-      }
-  </style>
-  <style>
-    /* Custom CSS for floating animation */
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
+#Adarsh {
+    transform: translateZ(0); /* Force hardware acceleration */
+}
+
+        .shadow-smoke {
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
-        50% {
-            transform: translateY(-10px); /* Adjust the floating height */
+
+        .dotted-line {
+            background: url('assets/Vector 1.png') no-repeat center center;
+            background-size:contain;
+            margin-block: -10px; /* Removed margin for responsiveness */
         }
-    }
 
-    .floating-effect {
-        animation: float 3s ease-in-out infinite; /* Adjust the duration for slower/faster animation */
-    }
-</style>
-<style>
-    /* Bounce Animation */
-    @keyframes bounce {
-        0%, 100% {
-            transform: translateY(0);
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
-        50% {
-            transform: translateY(-10px);
+
+        .floating-effect {
+            animation: float 3s ease-in-out infinite;
         }
-    }
 
-    .bounce-animation {
-        animation: bounce 1.5s infinite;
-    }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
 
-    .bounce-animation:hover {
-        animation: none; /* Stop animation on hover */
-        transform: translateY(-5px); /* Keep the hover effect */
-    }
+        .bounce-animation {
+            animation: bounce 1.5s infinite;
+        }
 
-    
-</style>
+        .bounce-animation:hover {
+            animation: none;
+            transform: translateY(-5px);
+        }
 
-<style>
-    /* Combined Animation */
-    .nav-item {
-        position: relative;
-        transition: transform 0.3s ease, color 0.3s ease;
-    }
+        .nav-item {
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
 
-    .nav-item::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 0;
-        height: 2px;
-        background-color: #ef4444; /* Red-500 */
-        transition: width 0.3s ease;
-    }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background-color: #ef4444;
+            transition: width 0.3s ease;
+        }
 
-    .nav-item:hover::after {
-        width: 100%;
-    }
+        .nav-item:hover::after {
+            width: 100%;
+        }
 
-    .nav-item:hover {
-        transform: scale(1.1); /* Scale up by 10% */
-        color: #ef4444; /* Red-500 */
-    }
-</style>
-<script>
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-    });
-</script>
+        .nav-item:hover {
+            transform: scale(1.1);
+            color: #ef4444;
+        }
 
+        @keyframes moveUpDown {
+            0%, 100% { transform: translateY(100px); opacity: 0; }
+            50% { transform: translateY(-100px); opacity: 1; }
+        }
 
-<style>
-    /* Enhanced Animation for GPA text */
-    @keyframes moveUpDown {
-        0%, 100% { transform: translateY(100px); opacity: 0; }
-        50% { transform: translateY(-100px); opacity: 1; }
-    }
-    .animate-gpa {
-        animation: moveUpDown 3s infinite ease-in-out;
-    }
-</style>
+        .animate-gpa {
+            animation: moveUpDown 3s infinite ease-in-out;
+        }
 
+        .scrolling-container {
+            display: flex;
+            width: max-content;
+            animation: scroll 20s linear infinite;
+        }
 
-   
-
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
 </head>
 <body class="overflow-x-hidden">
-  <header class="bg-white py-4 px-10 flex items-end shadow-xl top-[0] fixed w-full z-20">
-    <nav class="flex justify-between items-center w-full">
-        <div class="flex mr-[100px]">
-            <img src="assets/image 1 (2).png" alt="School Logo" class="h-12">
-        </div>
-        <ul class="hidden md:flex space-x-8 ml-[10px] mt-[10px]">
-            <li><a href="index.html" class="nav-item">Home</a></li>
-            <li><a href="About.html" class="nav-item">About Us</a></li>
-            <li><a href="Academics.html" class="nav-item">Academics</a></li>
-            <li><a href="Campus.html" class="nav-item">Campuses</a></li>
-            <li><a href="Gallery.html" class="nav-item">Events / Gallery</a></li>
-            <li><a href="Results.html" class="nav-item">Results</a></li>
-            <li><a href="career.html" class="nav-item">Careers</a></li>
-            <li><a href="Admissions.html" class="nav-item">Admissions</a></li>
-            <li><a href="Contact.html" class="nav-item">Contact Us</a></li>
-        </ul>
-        <button class="md:hidden block text-gray-800 focus:outline-none text-2xl" id="menu-toggle">
-            ☰
-        </button>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="hidden md:hidden bg-white w-full absolute left-0 top-full top-[0]  fixedshadow-md z-50" id="mobile-menu">
-        <ul class="flex flex-col text-center space-y-4 py-4">
-            <li><a href="index.html" class="nav-item">Home</a></li>
-            <li><a href="About.html" class="nav-item">About Us</a></li>
-            <li><a href="Academics.html" class="nav-item">Academics</a></li>
-            <li><a href="Campus.html" class="nav-item">Campuses</a></li>
-            <li><a href="Gallery.html" class="nav-item">Events / Gallery</a></li>
-            <li><a href="Results.html" class="nav-item">Results</a></li>
-            <li><a href="career.html" class="nav-item">Careers</a></li>
-            <li><a href="Admissions.html" class="nav-item">Admissions</a></li>
-            <li><a href="Contact.html" class="nav-item">Contact Us</a></li>
-        </ul>
-    </div>
-</header>
-
-<!-- Video Section -->
-<div class="md:w-screen w-screen  md:h-screen h-screen  md:mt-[3px] relative ">
-    <video id="myVideo" autoplay loop playsinline class="w-full h-full object-cover  ">
-        <source src="assets/613e2baed7c0503f74d42a61f28de52f522a66c7 (1).mp4"  type="video/mp4">
-        Your browser does not support the video tag.
-
-    </video>
-    <button onclick="document.getElementById('myVideo').muted = false;">
-      Enable Sound
-  </button>
-
-    <!-- Enable Sound Button -->
-
-</div>
-
-<div>
-  <div class=" bg-[#71A6EC] min-h-screen w-screen  md:mt-[72px] relative md:pb-[130px] top-6 ">
-   <!-- Floating Images Section -->
- 
-   <!-- Floating Images Section -->
-   <div class="relative h-screen flex justify-center ml-[10px] mt-[-100px] overflow-hidden w-[calc(100%-10px)]">
-    <!-- Scrolling Wrapper -->
-    <div class="scrolling-container flex space-x-4 w-max md:mb:[-200px] mb-[-250px]">
-        <!-- Image Set 1 -->
-        <div class="image-wrapper flex space-x-4">
-            <div class="horizontal-scroll-item relative border-[10px] mt-10 border-yellow-400 h-[350px] w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
-                <img src="assets/KRS01450 1 (1).png" alt="Classroom 1" class="h-full w-full object-cover">
+  <header class="bg-white py-4 px-10 flex items-end shadow-xl top-0 fixed w-full z-50">
+        <nav class="flex justify-between items-center w-full">
+            <div class="flex mr-[100px]">
+                <img src="assets/image 1 (2).png" alt="School Logo" class="h-12">
             </div>
-            <div class="horizontal-scroll-item relative border-[10px] mt-10 border-yellow-400 h-[350px] w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
-                <img src="assets/KRS01450 1 (1).png" alt="Classroom 1" class="h-full w-full object-cover">
-            </div>
-            <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[350px] w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
-                <img src="assets/KRS01450 1.png" alt="Classroom 2" class="h-full w-full object-cover">
-            </div>
-            <div class="horizontal-scroll-item relative border-[10px] mt-10 border-yellow-400 h-[350px] w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
-                <img src="assets/KRS01450 1 (2).png" alt="Classroom 3" class="h-full w-full object-cover">
-            </div>
-            <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[350px] w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
-                <img src="assets/KRS01450 1 (3).png" alt="Classroom 4" class="h-full w-full object-cover">
-            </div>
-        </div>
-
-        <!-- Image Set 2 (Duplicate for Infinite Effect) -->
-        <div class="image-wrapper flex space-x-4">
-            <div class="horizontal-scroll-item relative border-[10px] mt-10 border-yellow-400 h-[350px] w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
-                <img src="assets/KRS01450 1 (1).png" alt="Classroom 1" class="h-full w-full object-cover">
-            </div>
-            
-            <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[350px] w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
-                <img src="assets/KRS01450 1.png" alt="Classroom 2" class="h-full w-full object-cover">
-            </div>
-            <div class="horizontal-scroll-item relative border-[10px] mt-10 border-yellow-400 h-[350px] w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
-                <img src="assets/KRS01450 1 (1).png" alt="Classroom 1" class="h-full w-full object-cover">
-            </div>
-            <div class="horizontal-scroll-item relative border-[10px] mt-10 border-yellow-400 h-[350px] w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
-                <img src="assets/KRS01450 1 (2).png" alt="Classroom 3" class="h-full w-full object-cover">
-            </div>
-            <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[350px] w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
-                <img src="assets/KRS01450 1 (3).png" alt="Classroom 4" class="h-full w-full object-cover">
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    .scrolling-container {
-        display: flex;
-        width: max-content;
-        animation: scroll 20s linear infinite;
-    }
-
-    @keyframes scroll {
-        from {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(-50%);
-        }
-    }
-</style>
-
-<div class="container mx-auto p-2 relative mt-[-300px] lg:mt-[-2i50px]">
-  <!-- Header Section -->
-  <div class="text-center text-white mb-12 md:mb-24 py-5">
-      <h1 class="text-2xl sm:text-3xl font-bold">Welcome to</h1>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold px-2 py-1 rounded-md">
-          Adarsh English Medium School
-      </h2>
-      <p class="mt-1 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto text-justify">
-          Adarsh English Medium School has been a pillar of educational excellence in Tenali since its founding in 1989.
-      </p>
-      <button class="mt-8 bg-blue-900 text-white px-6 py-2 rounded-md bounce-animation hover:bg-blue-700 transition duration-300">
-          Read More
-      </button>
-  </div>
-      
-    <!-- Decorative Dotted Line -->
-    <div class="absolute w-full h-full dotted-line hidden md:block top-[-50px]  left-0"></div>
-
-    <!-- First Section -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-48 relative">
-        <!-- Floating Text Box -->
-        <div class="bg-pink-200 p-6 rounded-lg shadow-md md:rotate-[-5deg] text-center">
-            <h3 class="text-xl font-bold text-orange-600 mb-2">True Excellence</h3>
-            <p class="text-gray-700 text-sm max-w-xl text-justify">Over the past 35 years, Adarsh has grown into a vibrant community of learners, committed to not only academic success but also the holistic development of every child. Our approach blends rigorous academics with strong ethical values, physical education, and a wide range of extracurricular activities, ensuring that our students are well-rounded individuals prepared for the challenges of tomorrow.
-            </p>
-        </div>
-        <!-- Floating Image -->
-        <img src="assets/Group 21.png" alt="Student" class=" w-[75%] md:w-[30%] floating-effect mt-2 md:mt-0 md:mr-[-50px]">
-    </div>
-
-    <!-- Second Section -->
-    <div class="flex flex-col-reverse md:flex-row items-center justify-center gap-16 md:gap-48 relative mt-4">
-        <!-- Floating Image -->
-        <img src="assets/Group 22.png" alt="Student" class="w-[75%] md:w-[30%] floating-effect mt-2 md:mt-0">
-        <!-- Floating Text Box -->
-        <div class="bg-blue-200 p-6 rounded-lg shadow-md md:rotate-[5deg] text-center md:text-left">
-            <h3 class="text-xl font-bold text-orange-600 mb-4">Wisdom is Light</h3>
-            <p class="text-gray-700 text-sm max-w-xl text-justify">t building character and values that last a lifetime...At Adarsh, we believe that education is more than just learning from books—it’s about building character and values that last a lifetime. We’re dedicated to help every child to grow into a well-rounded individual who can face life’s challenges with wisdom and lead with compassion. Our nurturing environment, where academic excellence meets personal growth, ensures that every child’s unique potential is recognized and developed. </p>
-        </div>
-    </div>
-</div>
-  
-
-
-</div>
-
-<div class="bg-[#F0C14B] w-full flex flex-col items-center text-center p-6 mt-[0px] lg:mt-[0px] overflow-hidden">
-  <!-- Amenities Section -->
-  <h1 class="text-3xl font-bold  sm:mt-8">Amenities</h1>
-  <p class="max-w-4xl text-lg mt-2 px-4">
-      As we continue our tradition of excellence, we warmly welcome you to the Adarsh family. See how our focus on overall growth, guided by the belief that ‘Wisdom is Light,’ helps every child’s future shine with knowledge, care, and strong values. Find out what makes Adarsh unique.
-  </p>
-
-  <!-- Image Section -->
-  <div class="flex justify-center items-center h-screen p-4 md:mt-[-100px] mt-[250px]">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl w-full">
-          <!-- 100+ Teachers -->
-          <div class="bg-green-600 text-white p-6 rounded-lg flex flex-col items-center justify-center sm:col-span-1 sm:row-span-2 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="assets/Group (2).png" class="h-20" alt="100+ Teachers" />
-              <div class="text-xl font-semibold mt-2">100+ Teachers</div>
-          </div>
-  
-          <!-- 2600+ Students -->
-          <div class="bg-[#FF5317] text-white p-6 rounded-lg flex flex-col items-center justify-center sm:col-span-2 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="assets/Group (3).png" class="h-20" alt="2600+ Students" />
-              <div class="text-xl font-semibold mt-2">2600+ Students</div>
-          </div>
-  
-          <!-- 6 Campuses -->
-          <div class="bg-[#FFD89D] text-black p-6 rounded-lg flex flex-col items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="assets/school.png" class="h-20" alt="6 Campuses" />
-              <div class="text-lg font-semibold mt-2">6 Campuses</div>
-          </div>
-  
-          <!-- 35+ Schools -->
-          <div class="bg-[#EFE5E5] text-black p-6 rounded-lg flex flex-col items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="assets/Group (4).png" class="h-20" alt="35+ Schools" />
-              <div class="text-lg font-semibold mt-2">35+ Schools</div>
-          </div>
-  
-          <!-- Indoor & Outdoor -->
-          <div class="bg-[#5237E8] text-white p-6 rounded-lg flex flex-col items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="assets/playground.png" class="h-20" alt="Indoor & Outdoor" />
-              <div class="text-lg font-semibold mt-2">Indoor & Outdoor</div>
-          </div>
-  
-          <!-- Buses Transport -->
-          <div class="bg-[#B84496] text-white p-6 rounded-lg flex flex-col items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="assets/school (2).png" class="h-20" alt="Buses Transport" />
-              <div class="text-lg font-semibold mt-2">Buses Transport</div>
-          </div>
-      </div>
-  </div>
-
-  <!-- Top Rankers Section -->
-  <div class="flex flex-col items-center text-center mt-[250px] sm:mt-[-60px]">
-      <h1 class="text-3xl font-bold">Top Rankers</h1>
-      <p class="max-w-4xl text-lg mt-2 px-4 sm:mb-[100px] mb-[50px]">
-          As we continue our tradition of excellence, we warmly welcome you to the Adarsh family. See how our focus on overall growth, guided by the belief that ‘Wisdom is Light,’ helps every child’s future shine with knowledge, care, and strong values. Find out what makes Adarsh unique.
-      </p>
-
-      <div class="relative w-full md:w-[70%] lg:w-[85%] bg-[#BFE3F5] rounded-[30px] shadow-lg overflow-hidden p-4 flex justify-center items-center">
-          <!-- Floating GPA text behind the image -->
-          <div class="absolute text-gray-300 md:text-[100px] text-[30px] font-bold animate-gpa opacity-50">
-              9/10 GPA
-          </div>
-
-          <!-- Image -->
-          <img src="assets/KRS00476 copy 3.png" alt="Students" class="relative w-full h-auto rounded-[25px] object-cover z-10">
-      </div>
-  </div>
-
-
-
- <!-- Footer Image -->
- <div class="mt-8 w-screen overflow-x-hidden">
-  <img src="assets/Frame 29.png" alt="frame" class="w-full" />
-</div>
-
-<!-- Testimonials Section -->
-<div class="w-full max-w-5xl p-5">
-  <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">What Our Parents Say About Us</h2>
-
-  <!-- Carousel Container -->
-  <div class="relative overflow-hidden">
-      <!-- Slider -->
-      <div id="slider" class="flex transition-transform duration-300">
-          <!-- Testimonial Cards -->
-          <div class="testimonial-card w-full md:w-1/3 px-2 flex-shrink-0 ">
-              <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
-                <div class="flex items-center mb-3">
-                  <img
-                    src="https://via.placeholder.com/50"
-                    class="w-12 h-12 rounded-full border border-gray-300"
-                    alt="User"
-                  />
-                  <div class="ml-4">
-                    <h3 class="font-semibold text-left text-gray-900 text-lg">Leo</h3>
-                    <div class="flex items-center ml-1">
-                    <p class="text-gray-500 text-left text-sm">Lead Designer</p>
-                   
-                      <span class="text-yellow-500 text-sm text-lg">⭐⭐⭐⭐☆</span>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="font-semibold text-gray-800 text-lg">
-                  It was a very good experience
-                </h4>
-                <p class="text-gray-600 text-sm mt-2 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla
-                  sit amet nisl tempus convallis.
-                </p>
-              </div>
-            </div>
-
-            <div class="testimonial-card w-full md:w-1/3 px-2 flex-shrink-0 ">
-              <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
-                <div class="flex items-center mb-3">
-                  <img
-                    src="https://via.placeholder.com/50"
-                    class="w-12 h-12 rounded-full border border-gray-300"
-                    alt="User"
-                  />
-                  <div class="ml-4">
-                    <h3 class="font-semibold text-left text-gray-900 text-lg">Leo</h3>
-                    <div class="flex items-center ml-1">
-                    <p class="text-gray-500 text-left text-sm">Lead Designer</p>
-                   
-                      <span class="text-yellow-500 text-sm text-lg">⭐⭐⭐⭐☆</span>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="font-semibold text-gray-800 text-lg">
-                  It was a very good experience
-                </h4>
-                <p class="text-gray-600 text-sm mt-2 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla
-                  sit amet nisl tempus convallis.
-                </p>
-              </div>
-            </div>
-            <div class="testimonial-card w-full md:w-1/3 px-2 flex-shrink-0 ">
-              <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
-                <div class="flex items-center mb-3">
-                  <img
-                    src="https://via.placeholder.com/50"
-                    class="w-12 h-12 rounded-full border border-gray-300"
-                    alt="User"
-                  />
-                  <div class="ml-4">
-                    <h3 class="font-semibold text-left text-gray-900 text-lg">Leo</h3>
-                    <div class="flex items-center ml-1">
-                    <p class="text-gray-500 text-left text-sm">Lead Designer</p>
-                   
-                      <span class="text-yellow-500 text-sm text-lg">⭐⭐⭐⭐☆</span>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="font-semibold text-gray-800 text-lg">
-                  It was a very good experience
-                </h4>
-                <p class="text-gray-600 text-sm mt-2 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla
-                  sit amet nisl tempus convallis.
-                </p>
-              </div>
-            </div>
-            <div class="testimonial-card w-full md:w-1/3 px-2 flex-shrink-0">
-              <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
-                <div class="flex items-center mb-3">
-                  <img
-                    src="https://via.placeholder.com/50"
-                    class="w-12 h-12 rounded-full border border-gray-300"
-                    alt="User"
-                  />
-                  <div class="ml-4">
-                    <h3 class="font-semibold text-left text-gray-900 text-lg">Leo</h3>
-                    <div class="flex items-center ml-1">
-                    <p class="text-gray-500 text-left text-sm">Lead Designer</p>
-                   
-                      <span class="text-yellow-500 text-sm text-lg">⭐⭐⭐⭐☆</span>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="font-semibold text-gray-800 text-lg">
-                  It was a very good experience
-                </h4>
-                <p class="text-gray-600 text-sm mt-2 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla
-                  sit amet nisl tempus convallis.
-                </p>
-              </div>
-            </div>
-            <div class="testimonial-card w-full md:w-1/3 px-2 flex-shrink-0 ">
-              <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
-                <div class="flex items-center mb-3">
-                  <img
-                    src="https://via.placeholder.com/50"
-                    class="w-12 h-12 rounded-full border border-gray-300"
-                    alt="User"
-                  />
-                  <div class="ml-4">
-                    <h3 class="font-semibold text-left text-gray-900 text-lg">Leo</h3>
-                    <div class="flex items-center ml-1">
-                    <p class="text-gray-500 text-left text-sm">Lead Designer</p>
-                   
-                      <span class="text-yellow-500 text-sm text-lg">⭐⭐⭐⭐☆</span>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="font-semibold text-gray-800 text-lg">
-                  It was a very good experience
-                </h4>
-                <p class="text-gray-600 text-sm mt-2 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla
-                  sit amet nisl tempus convallis.
-                </p>
-              </div>
-            </div>
-            <div class="testimonial-card w-full md:w-1/3 px-2 flex-shrink-0 ">
-              <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
-                <div class="flex items-center mb-3">
-                  <img
-                    src="https://via.placeholder.com/50"
-                    class="w-12 h-12 rounded-full border border-gray-300"
-                    alt="User"
-                  />
-                  <div class="ml-4">
-                    <h3 class="font-semibold text-left text-gray-900 text-lg">Leo</h3>
-                    <div class="flex items-center ml-1">
-                    <p class="text-gray-500 text-left text-sm">Lead Designer</p>
-                   
-                      <span class="text-yellow-500 text-sm text-lg">⭐⭐⭐⭐☆</span>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="font-semibold text-gray-800 text-lg">
-                  It was a very good experience
-                </h4>
-                <p class="text-gray-600 text-sm mt-2 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla
-                  sit amet nisl tempus convallis.
-                </p>
-              </div>
-            </div>
-            <div class="testimonial-card w-full md:w-1/3 px-2 flex-shrink-0 ">
-              <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
-                <div class="flex items-center mb-3">
-                  <img
-                    src="https://via.placeholder.com/50"
-                    class="w-12 h-12 rounded-full border border-gray-300"
-                    alt="User"
-                  />
-                  <div class="ml-4">
-                    <h3 class="font-semibold text-left text-gray-900 text-lg">Leo</h3>
-                    <div class="flex items-center ml-1">
-                    <p class="text-gray-500 text-left text-sm">Lead Designer</p>
-                   
-                      <span class="text-yellow-500 text-sm text-lg">⭐⭐⭐⭐☆</span>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="font-semibold text-gray-800 text-lg">
-                  It was a very good experience
-                </h4>
-                <p class="text-gray-600 text-sm mt-2 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla
-                  sit amet nisl tempus convallis.
-                </p>
-              </div>
-            </div>
-            <div class="testimonial-card w-full md:w-1/3 px-2 flex-shrink-0 ">
-              <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
-                <div class="flex items-center mb-3">
-                  <img
-                    src="https://via.placeholder.com/50"
-                    class="w-12 h-12 rounded-full border border-gray-300"
-                    alt="User"
-                  />
-                  <div class="ml-4">
-                    <h3 class="font-semibold text-left text-gray-900 text-lg">Leo</h3>
-                    <div class="flex items-center ml-1">
-                    <p class="text-gray-500 text-left text-sm">Lead Designer</p>
-                   
-                      <span class="text-yellow-500 text-sm text-lg">⭐⭐⭐⭐☆</span>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="font-semibold text-gray-800 text-lg">
-                  It was a very good experience
-                </h4>
-                <p class="text-gray-600 text-sm mt-2 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla
-                  sit amet nisl tempus convallis.
-                </p>
-              </div>
-            </div>
-            
-
-          <div class="testimonial-card w-full md:w-1/3 px-2 flex-shrink-0 ">
-              <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
-                  <div class="flex items-center mb-3">
-                    <img
-                      src="https://via.placeholder.com/50"
-                      class="w-12 h-12 rounded-full border border-gray-300"
-                      alt="User"
-                    />
-                    <div class="ml-4">
-                      <h3 class="font-semibold text-left text-gray-900 text-lg">Leo</h3>
-                      <div class="flex items-center ml-1">
-                      <p class="text-gray-500 text-left text-sm">Lead Designer</p>
-                     
-                        <span class="text-yellow-500 text-sm text-lg">⭐⭐⭐⭐☆</span>
-                      </div>
-                    </div>
-                  </div>
-                  <h4 class="font-semibold text-gray-800 text-lg">
-                    It was a very good experience
-                  </h4>
-                  <p class="text-gray-600 text-sm mt-2 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla
-                    sit amet nisl tempus convallis.
-                  </p>
-                </div>
-          </div>
-      </div>
-  </div>
-
-  <!-- Navigation & Dots -->
-  <div class="flex justify-center items-center mt-6 space-x-6">
-      <!-- Left Arrow -->
-      <button id="prev" class="p-2 text-red text-2xl">
-          <img src="assets/chevron-down (1).png" alt="Left Arrow" class="w-10 h-10">
-      </button>
-
-      <!-- Dots Indicator -->
-      <div class="flex space-x-2">
-          <div class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer"></div>
-          <div class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer"></div>
-          <div class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer"></div>
-      </div>
-
-      <!-- Right Arrow -->
-      <button id="next" class="p-2 text-red text-2xl">
-          
-          <img src="assets/chevron-down.png" alt="Left Arrow" class="w-10 h-10">
-          
-      </button>
-  </div>
-</div>
-</div>
-
-
-   
-   
-
-   
-    
-  <div class="bg-[#229F6A] w-full min-h-screen flex flex-col items-center p-8 ">
-  
-    <!-- Map Embed (Responsive) -->
-    <iframe 
-        class="w-full max-w-[1200px] h-[350px]" 
-        src="https://www.openstreetmap.org/export/embed.html?bbox=80.63198804855348%2C16.24370624695233%2C80.63438057899477%2C16.245297675058342&amp;layer=mapnik&amp;marker=16.24450196261525%2C80.63318431377411" 
-        style="border: 1px solid black;">
-    </iframe>
-
-    <!-- Larger View Button -->
-    <small class="mt-4">
-        <a href="https://www.openstreetmap.org/?mlat=16.244502&amp;mlon=80.633184#map=19/16.244502/80.633184">
-            <button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md 
-                transition-transform duration-300 hover:scale-110 
-                hover:shadow-blue-500/50">
-                Larger View
+            <ul class="hidden md:flex space-x-8 ml-[10px] mt-[10px]">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="About.html" class="nav-item">About Us</a></li>
+                <li><a href="Academics.html" class="nav-item">Academics</a></li>
+                <li><a href="Campus.html" class="nav-item">Campuses</a></li>
+                <li><a href="Gallery.html" class="nav-item">Events / Gallery</a></li>
+                <li><a href="Results.html" class="nav-item">Results</a></li>
+                <li><a href="career.html" class="nav-item">Careers</a></li>
+                <li><a href="Admissions.html" class="nav-item">Admissions</a></li>
+                <li><a href="#footer" class="nav-item">Contact Us</a></li>
+            </ul>
+            <button class="md:hidden block text-gray-800 focus:outline-none text-2xl" id="menu-toggle">
+                ☰
             </button>
-        </a>
-    </small>
-
-    <!-- Footer Section -->
-    <footer class="bg-[#229F6A] text-white py-8 w-full">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            
-            <!-- Footer Links -->
-            <div>
-                <h2 class="font-bold text-yellow-400">Company Info</h2>
-                <ul class="mt-2 space-y-1">
-                    <li><a href="#" class="hover:underline">About Us</a></li>
-                    <li><a href="#" class="hover:underline">Career</a></li>
-                    <li><a href="#" class="hover:underline">We are hiring</a></li>
-                    <li><a href="#" class="hover:underline">Blog</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="font-bold text-yellow-400">Legal</h2>
-                <ul class="mt-2 space-y-1">
-                    <li><a href="#" class="hover:underline">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:underline">Terms of Use</a></li>
-                    <li><a href="#" class="hover:underline">Compliance</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="font-bold text-yellow-400">Features</h2>
-                <ul class="mt-2 space-y-1">
-                    <li><a href="#" class="hover:underline">Business Marketing</a></li>
-                    <li><a href="#" class="hover:underline">User Analytics</a></li>
-                    <li><a href="#" class="hover:underline">Live Chat</a></li>
-                    <li><a href="#" class="hover:underline">Unlimited Support</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="font-bold text-yellow-400">Resources</h2>
-                <ul class="mt-2 space-y-1">
-                    <li><a href="#" class="hover:underline">iOS & Android</a></li>
-                    <li><a href="#" class="hover:underline">Watch a Demo</a></li>
-                    <li><a href="#" class="hover:underline">Customers</a></li>
-                    <li><a href="#" class="hover:underline">API</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="font-bold text-yellow-400">Get In Touch</h2>
-                <ul class="mt-2 space-y-2">
-                    <li class="flex items-center gap-2">
-                        <img src="assets/bx_bx-phone.png" alt="Phone" class="w-5 h-5"/> 
-                        <span>+91 9299997557</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <img src="assets/Vector (5).png" alt="Location" class="w-5 h-5"/> 
-                        <span>Amaravathi Plots, Tenali - 522202, Andhra Pradesh</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <img src="assets/carbon_send-alt.png" alt="Email" class="w-5 h-5"/> 
-                        <span>adarsh.tenali@gmail.com</span>
-                    </li>
-                </ul>
-
-                <!-- Social Icons -->
-                <div class="flex gap-4 mt-4">
-                    <a href="#" class="hover:text-gray-300" aria-label="Facebook"><img src="assets/facebook.png" class="w-6 h-6" alt="Facebook"/></a>
-                    <a href="#" class="hover:text-gray-300" aria-label="Instagram"><img src="assets/ant-design_instagram-outlined.png" class="w-6 h-6" alt="Instagram"/></a>
-                    <a href="#" class="hover:text-gray-300" aria-label="Twitter"><img src="assets/ant-design_twitter-outlined.png" class="w-6 h-6" alt="Twitter"/></a>
-                </div>
-            </div>
+        </nav>
+    
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white w-full absolute left-0 top-full shadow-md z-50" id="mobile-menu">
+            <ul class="flex flex-col text-center space-y-4 py-4">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="About.html" class="nav-item">About Us</a></li>
+                <li><a href="Academics.html" class="nav-item">Academics</a></li>
+                <li><a href="Campus.html" class="nav-item">Campuses</a></li>
+                <li><a href="Gallery.html" class="nav-item">Events / Gallery</a></li>
+                <li><a href="Results.html" class="nav-item">Results</a></li>
+                <li><a href="career.html" class="nav-item">Careers</a></li>
+                <li><a href="Admissions.html" class="nav-item">Admissions</a></li>
+                <li><a href="#footer" class="nav-item">Contact Us</a></li>
+            </ul>
         </div>
-    </footer>
+    </header>
+ <!-- Wrap the video in a container with the desired aspect ratio -->
+<div class="w-full  md:min-h-screen bg-[#71A6EC]" >
+    <video 
+        id="Adarsh" 
+        autoplay 
+        loop 
+        playsinline 
+        class="w-full h-[180px] md:h-[600px] object-cover mt-[5rem] bg-[#71A6EC]" style="aspect-ratio: 16/9;"
+    >
+        <source src="assets/613e2baed7c0503f74d42a61f28de52f522a66c7 (1).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var video = document.getElementById('Adarsh');
+        video.play();
+        
+        video.addEventListener('mouseenter', function() {
+            video.muted = false;
+        });
 
-
-</div>
-
-
-</div>
-
-
-
-  </div>
-  
-  
-
-  </div>
- 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+        video.addEventListener('mouseleave', function() {
+            video.muted = true;
         });
     });
 </script>
-  <!-- JavaScript for Slider -->
-  <script>
-    const slider = document.getElementById("slider");
-    const dots = document.querySelectorAll(".dot");
-    const prev = document.getElementById("prev");
-    const next = document.getElementById("next");
+    <div class="bg-[#71A6EC] py-2   w-full">
+        <div class=" flex justify-center overflow-hidden">
+            <div class="scrolling-container flex space-x-4">
+                <div class="image-wrapper  flex space-x-4">
+                    <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[200px] w-[200px] md:h-[350px] md:w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                        <img src="assets/KRS01450 1 (1).png" alt="Classroom 1" class="h-full w-full object-cover">
+                    </div>
+                    <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[200px] w-[200px] md:h-[350px] md:w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                        <img src="assets/KRS01450 1 (1).png" alt="Classroom 1" class="h-full w-full object-cover">
+                    </div>
+                    <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[200px] w-[200px] md:h-[350px] md:w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                        <img src="assets/KRS01450 1.png" alt="Classroom 2" class="h-full w-full object-cover">
+                    </div>
+                    <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[200px] w-[200px] md:h-[350px] md:w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                        <img src="assets/KRS01450 1 (2).png" alt="Classroom 3" class="h-full w-full object-cover">
+                    </div>
+                    <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[200px] w-[200px] md:h-[350px] md:w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                        <img src="assets/KRS01450 1 (3).png" alt="Classroom 4" class="h-full w-full object-cover">
+                    </div>
+                </div>
+                <div class="image-wrapper flex space-x-4">
+                    <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[200px] w-[200px] md:h-[350px] md:w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                        <img src="assets/KRS01450 1 (1).png" alt="Classroom 1" class="h-full w-full object-cover">
+                    </div>
+                    <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[200px] w-[200px] md:h-[350px] md:w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                        <img src="assets/KRS01450 1.png" alt="Classroom 2" class="h-full w-full object-cover">
+                    </div>
+                    <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[200px] w-[200px] md:h-[350px] md:w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                        <img src="assets/KRS01450 1 (1).png" alt="Classroom 1" class="h-full w-full object-cover">
+                    </div>
+                    <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[200px] w-[200px] md:h-[350px] md:w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                        <img src="assets/KRS01450 1 (2).png" alt="Classroom 3" class="h-full w-full object-cover">
+                    </div>
+                    <div class="horizontal-scroll-item relative border-[10px] border-yellow-400 h-[200px] w-[200px] md:h-[350px] md:w-[350px] rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-shrink-0">
+                        <img src="assets/KRS01450 1 (3).png" alt="Classroom 4" class="h-full w-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    let index = 0;
-    const totalSlides = 3; // Number of slides
+        <div class="container mx-auto p-2 relative">
+            <div class="text-center text-white mb-12 md:mb-24 py-2 px-4">
+                <h1 class="text-2xl sm:text-3xl font-bold">Welcome to</h1>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold px-2 py-1 rounded-md">
+                    <span class="text-red-600 italic">Adarsh</span><br> English Medium School
+                </h2>
+                <p class="my-4 text-sm sm:text-base lg:text-lg max-w-full md:max-w-2xl mx-auto text-center">
+                    Adarsh English Medium School has been a pillar of educational excellence in Tenali since its founding in 1989.
+                </p>
+                <a href="/About.html" class="mt-8 bg-blue-900 text-white px-6 py-2 rounded-md bounce-animation hover:bg-blue-700 transition duration-300 pointer-events-auto">
+                    Read More
+                </a>  
+            </div>
+            <div class="absolute w-full h-full hidden md:block  dotted-line top-[18px]  left-[-100px]"></div>
 
-    function updateSlider() {
-        slider.style.transform = `translateX(-${index * 100}%)`;
-        dots.forEach((dot, i) => {
-            dot.classList.toggle("bg-red-500", i === index);
-            dot.classList.toggle("bg-gray-300", i !== index);
+            <div class="flex flex-col md:flex-row items-center justify-center gap-16 lg:gap-6 lg:right-16 relative">
+                <div class="bg-pink-200 p-6 rounded-lg shadow-md md:rotate-[-5deg] text-center">
+                    <h3 class="text-xl font-bold text-orange-600 mb-2">True Excellence</h3>
+                    <p class="text-gray-700 text-sm max-w-xl text-justify">Over the past 35 years, Adarsh has grown into a vibrant community of learners, committed to not only academic success but also the holistic development of every child. Our approach blends rigorous academics with strong ethical values, physical education, and a wide range of extracurricular activities, ensuring that our students are well-rounded individuals prepared for the challenges of tomorrow.</p>
+                </div>
+                <img src="assets/Group 21.png" alt="Student" class="w-[75%] md:w-[30%] floating-effect mt-2 md:mt-0 md:mr-[-50px]">
+            </div>
+
+            <div class="flex flex-col-reverse md:flex-row items-center justify-center gap-16 lg:gap-6  mt-6 relative">
+                <img src="assets/Group 22.png" alt="Student" class="w-[75%] md:w-[30%] floating-effect mt-2 md:mt-0">
+                <div class="bg-blue-200 p-6 rounded-lg shadow-md md:rotate-[5deg] text-center md:text-left">
+                    <h3 class="text-xl font-bold text-orange-600 mb-4">Wisdom is Light</h3>
+                    <p class="text-gray-700 text-sm max-w-xl text-justify">At Adarsh, we believe that education is more than just learning from books—it’s about building character and values that last a lifetime. We’re dedicated to help every child to grow into a well-rounded individual who can face life’s challenges with wisdom and lead with compassion. Our nurturing environment, where academic excellence meets personal growth, ensures that every child’s unique potential is recognized and developed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-[#F0C14B] w-full flex flex-col items-center text-center p-6  overflow-hidden">
+        <h1 class="text-3xl font-bold sm:mt-8">Amenities</h1>
+        <p class="max-w-4xl text-lg mt-2 px-4">
+            As we continue our tradition of excellence, we warmly welcome you to the Adarsh family. See how our focus on overall growth, guided by the belief that ‘Wisdom is Light,’ helps every child’s future shine with knowledge, care, and strong values. Find out what makes Adarsh unique.
+        </p>
+
+        <div class="flex justify-center items-center py-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl w-full">
+              <!-- 100+ Teachers -->
+              <div class="bg-green-600 text-white p-6 rounded-lg flex flex-col items-center justify-center sm:col-span-1 sm:row-span-2 shadow-lg transform transition-transform duration-300 hover:scale-105">
+                  <img src="assets/Group (2).png" class="h-20" alt="100+ Teachers" />
+                  <div class="text-xl font-semibold mt-2">100+ Teachers</div>
+              </div>
+      
+              <!-- 2600+ Students -->
+              <div class="bg-[#FF5317] text-white p-6 rounded-lg flex flex-col items-center justify-center sm:col-span-2 shadow-lg transform transition-transform duration-300 hover:scale-105">
+                  <img src="assets/Group (3).png" class="h-20" alt="2600+ Students" />
+                  <div class="text-xl font-semibold mt-2">2600+ Students</div>
+              </div>
+      
+              <!-- 6 Campuses -->
+              <div class="bg-[#FFD89D] text-black p-6 rounded-lg flex flex-col items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-105">
+                  <img src="assets/school.png" class="h-20" alt="6 Campuses" />
+                  <div class="text-lg font-semibold mt-2">6 Campuses</div>
+              </div>
+      
+              <!-- 35+ Schools -->
+              <div class="bg-[#EFE5E5] text-black p-6 rounded-lg flex flex-col items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-105">
+                  <img src="assets/Group (4).png" class="h-20" alt="35+ Schools" />
+                  <div class="text-lg font-semibold mt-2">35+ Schools</div>
+              </div>
+      
+              <!-- Indoor & Outdoor -->
+              <div class="bg-[#5237E8] text-white p-6 rounded-lg flex flex-col items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-105">
+                  <img src="assets/playground.png" class="h-20" alt="Indoor & Outdoor" />
+                  <div class="text-lg font-semibold mt-2">Indoor & Outdoor</div>
+              </div>
+      
+              <!-- Buses Transport -->
+              <div class="bg-[#B84496] text-white p-6 rounded-lg flex flex-col items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-105">
+                  <img src="assets/school (2).png" class="h-20" alt="Buses Transport" />
+                  <div class="text-lg font-semibold mt-2">Buses Transport</div>
+              </div>
+          </div>
+      </div>
+
+        <div class="flex flex-col items-center text-center mt-10">
+            <h1 class="text-3xl font-bold">Top Rankers</h1>
+            <p class="max-w-4xl text-lg mt-2 px-4 mb-10">
+                As we continue our tradition of excellence, we warmly welcome you to the Adarsh family. See how our focus on overall growth, guided by the belief that ‘Wisdom is Light,’ helps every child’s future shine with knowledge, care, and strong values. Find out what makes Adarsh unique.
+            </p>
+
+            <div class="relative w-full md:w-[70%] lg:w-[85%] bg-[#BFE3F5] rounded-[30px] shadow-lg overflow-hidden p-4 flex justify-center items-center">
+                <div class="absolute text-gray-300 md:text-[100px] text-[30px] font-bold animate-gpa opacity-50">9/10 GPA</div>
+                <img src="assets/KRS00476 copy 3.png" alt="Students" class="relative w-full h-auto rounded-[25px] object-cover z-10">
+            </div>
+        </div>
+
+        <div class="mt-8 w-full overflow-x-hidden">
+            <img src="assets/Frame 29.png" alt="frame" class="w-full" />
+        </div>
+
+        <div class="w-full max-w-5xl p-5">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">What Our Parents Say About Us</h2>
+            <div class="relative overflow-hidden">
+                <div id="slider" class="flex transition-transform duration-300">
+                    <div class="testimonial-card w-full md:w-1/3 px-2 flex-shrink-0">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
+                            <div class="flex items-center mb-3">
+                                <img src="https://via.placeholder.com/50" class="w-12 h-12 rounded-full border border-gray-300" alt="User" />
+                                <div class="ml-4">
+                                    <h3 class="font-semibold text-left text-gray-900 text-lg">Leo</h3>
+                                    <div class="flex items-center ml-1">
+                                        <p class="text-gray-500 text-left text-sm">Lead Designer</p>
+                                        <span class="text-yellow-500 text-sm text-lg">⭐⭐⭐⭐☆</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 text-lg">It was a very good experience</h4>
+                            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis.</p>
+                        </div>
+                    </div>
+                    <!-- Repeat testimonial cards as needed -->
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center mt-6 space-x-6">
+                <button id="prev" class="p-2 text-red text-2xl">
+                    <img src="assets/chevron-down (1).png" alt="Left Arrow" class="w-10 h-10">
+                </button>
+                <div class="flex space-x-2">
+                    <div class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer"></div>
+                    <div class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer"></div>
+                    <div class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer"></div>
+                </div>
+                <button id="next" class="p-2 text-red text-2xl">
+                    <img src="assets/chevron-down.png" alt="Right Arrow" class="w-10 h-10">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-[#229F6A] w-full flex flex-col items-center p-8 ">
+        <iframe class="w-full max-w-[1200px] h-[350px]" src="https://www.openstreetmap.org/export/embed.html?bbox=80.63198804855348%2C16.24370624695233%2C80.63438057899477%2C16.245297675058342&amp;layer=mapnik&amp;marker=16.24450196261525%2C80.63318431377411" style="border: 1px solid black;"></iframe>
+        <small class="mt-4">
+            <a href="https://www.openstreetmap.org/?mlat=16.244502&amp;mlon=80.633184#map=19/16.244502/80.633184">
+                <button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md transition-transform duration-300 hover:scale-110 hover:shadow-blue-500/50">Larger View</button>
+            </a>
+        </small>
+
+        <footer id="footer" class="bg-[#229F6A] text-white py-8 w-full">
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div>
+                    <h2 class="font-bold text-yellow-400">Company Info</h2>
+                    <ul class="mt-2 space-y-1">
+                        <li><a href="#" class="hover:underline">About Us</a></li>
+                        <li><a href="#" class="hover:underline">Career</a></li>
+                        <li><a href="#" class="hover:underline">We are hiring</a></li>
+                        <li><a href="#" class="hover:underline">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-bold text-yellow-400">Legal</h2>
+                    <ul class="mt-2 space-y-1">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Compliance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-bold text-yellow-400">Features</h2>
+                    <ul class="mt-2 space-y-1">
+                        <li><a href="#" class="hover:underline">Business Marketing</a></li>
+                        <li><a href="#" class="hover:underline">User Analytics</a></li>
+                        <li><a href="#" class="hover:underline">Live Chat</a></li>
+                        <li><a href="#" class="hover:underline">Unlimited Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-bold text-yellow-400">Resources</h2>
+                    <ul class="mt-2 space-y-1">
+                        <li><a href="#" class="hover:underline">iOS & Android</a></li>
+                        <li><a href="#" class="hover:underline">Watch a Demo</a></li>
+                        <li><a href="#" class="hover:underline">Customers</a></li>
+                        <li><a href="#" class="hover:underline">API</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-bold text-yellow-400">Get In Touch</h2>
+                    <ul class="mt-2 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <img src="assets/bx_bx-phone.png" alt="Phone" class="w-5 h-5"/> 
+                            <span>+91 9299997557</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <img src="assets/Vector (5).png" alt="Location" class="w-5 h-5"/> 
+                            <span>Amaravathi Plots, Tenali - 522202, Andhra Pradesh</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <img src="assets/carbon_send-alt.png" alt="Email" class="w-5 h-5"/> 
+                            <span>adarsh.tenali@gmail.com</span>
+                        </li>
+                    </ul>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="hover:text-gray-300" aria-label="Facebook"><img src="assets/facebook.png" class="w-6 h-6" alt="Facebook"/></a>
+                        <a href="#" class="hover:text-gray-300" aria-label="Instagram"><img src="assets/ant-design_instagram-outlined.png" class="w-6 h-6" alt="Instagram"/></a>
+                        <a href="#" class="hover:text-gray-300" aria-label="Twitter"><img src="assets/ant-design_twitter-outlined.png" class="w-6 h-6" alt="Twitter"/></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('menu-toggle').addEventListener('click', function () {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            });
         });
-    }
 
-    prev.addEventListener("click", () => {
-        index = index > 0 ? index - 1 : totalSlides - 1;
-        updateSlider();
-    });
+        const slider = document.getElementById("slider");
+        const dots = document.querySelectorAll(".dot");
+        const prev = document.getElementById("prev");
+        const next = document.getElementById("next");
 
-    next.addEventListener("click", () => {
-        index = index < totalSlides - 1 ? index + 1 : 0;
-        updateSlider();
-    });
+        let index = 0;
+        const totalSlides = 3; // Number of slides
 
-    dots.forEach((dot, i) => {
-        dot.addEventListener("click", () => {
-            index = i;
+        function updateSlider() {
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("bg-red-500", i === index);
+                dot.classList.toggle("bg-gray-300", i !== index);
+            });
+        }
+
+        prev.addEventListener("click", () => {
+            index = index > 0 ? index - 1 : totalSlides - 1;
             updateSlider();
         });
-    });
 
-    updateSlider();
-</script> 
+        next.addEventListener("click", () => {
+            index = index < totalSlides - 1 ? index + 1 : 0;
+            updateSlider();
+        });
 
- 
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                index = i;
+                updateSlider();
+            });
+        });
+
+        updateSlider();
+    </script>
 </body>
 </html>
